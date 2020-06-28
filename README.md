@@ -1,3 +1,3 @@
-## FULLSTACK-PROJECT
+# FULLSTACK-PROJECT
 
-# Team Members - Swetha Venkatesan, Sree Vandana Nadipalli, Likhitha Vanga
+## Team Members - Swetha Venkatesan, Sree Vandana Nadipalli, Likhitha Vanga
