@@ -1,18 +1,24 @@
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 8080;
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }));
+var express = require('express'); 
+var app = express(); 
+var port = process.env.PORT || 8080; 
+var morgan = require('morgan'); 
+var mongoose = require('mongoose'); 
+var bodyParser = require('body-parser'); 
+var router = express.Router(); 
+var appRoutes = require('./app/routes/api')(router);
+var path = require('path');
 
-const mongoose = require('mongoose');
+app.use(morgan('dev')); // Morgan Middleware
+app.use(bodyParser.json()); // Body-parser middleware
+app.use(bodyParser.urlencoded({ extended: true })); // For parsing application/x-www-form-urlencoded
+app.use(express.static(__dirname + '/public')); // Allow front end to access public folder
+app.use('/api', appRoutes); // Assign name to end points (e.g., '/api/management/', '/api/users' ,etc. )
+
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-var User = require('./app/models/user');
-app.use(morgan('dev'));
+
 
 // getting-started.js
 
@@ -27,17 +33,9 @@ mongoose.connect('mongodb://localhost:27017/foodCart', function(err){
   }
 });
 
-//http:localhost:8080/users
-app.post('/users',function(req,res){
-  var user = new User();
-  user.username = req.body.username;
-  user.password = req.body.password;
-  user.email = req.body.email;
-  user.save();
-  console.log(req.body);
-  res.send('user created');
+app.get('*', function(req,res){
+res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
-
 
 app.listen(port, function(){
   console.log('Running the server on port '+ port);
