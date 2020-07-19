@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="./checkout.css">
 </head>
 <body>
-  
   <h1>Proceed To Check-Out</h1>
+  <!--Radio Buttons displaying valis options for check-out-->
   <div class='radio-options'>
-    <input type="radio" id='pickUp' value="Pick Up">Pick Up</input>
-    <input type="radio" id='cod' value="Cash On Delivery">Cash On Delivery</input>
-    <input type="radio" id='card' value="Card Payment">Card Payment</input>
+    <input type="radio" id='pickUp' name='checkOutOption' value="Pick Up">
+    <label for='pickUp'>Pick Up</label>
+    <input type="radio" id='cod' name='checkOutOption' value="Cash On Delivery">
+    <label for='cod'>Cash On Delivery</label>
+    <input type="radio" id='card' name='checkOutOption' value="Card Payment">
+    <label for="card">Card Payment</label>
   </div>
 </body>
 </html>
