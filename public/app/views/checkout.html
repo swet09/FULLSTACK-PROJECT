@@ -48,10 +48,8 @@
 
     </section>
 
-  <h1>Hello</h1>
-
     <div ng-switch="selection" class="animate-switch-container">
-      <div ng-switch-when="Pick Up" class="animate-switch" id="pu">
+      <div ng-switch-when="Pick Up" class="pu">
         <!-- <div class="picup__option"> -->
           <section class="pickup-grid-container" class="pickup__grid">
 
@@ -73,9 +71,33 @@
 
       <div ng-switch-when="Cash On Delivery" class="animate-switch">
         <!-- <div class="cod__option"></div> -->
+        <section class="cod__grid">
+
+          <!-- <div class="codheading" ><h2>Delivary Address</h2></div> -->
+
+            <form class="form">
+              <div class="codheading" ><h2>Delivary Address</h2></div>
+
+              <div class="form__group">
+                  <input type="text" placeholder="Address Line 1" class="form__input" required ="true"/>
+              </div>
+              
+              <div class="form__group">
+                  <input type="email" placeholder="Address Line 2" class="form__input" required ="true"/>
+              </div>
+              
+              <div class="form__group">
+                  <input type="password" placeholder="Phone Number" class="form__input" required ="true"/>
+              </div>
+              
+              <button class="btn btn-primary" type="button">Deliver To This Address</button>
+          </form>
+
+        </section>
       </div>
       <div ng-switch-when="Card Payment" class="animate-switch">
         <!-- <div class="card__option"></div> -->
+
       </div>
     </div>
 

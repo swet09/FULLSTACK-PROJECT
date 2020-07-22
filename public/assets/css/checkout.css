@@ -78,6 +78,14 @@ line-height: 0px;}
 
 /* pick-up option grid css */
 
+.pu{
+  padding-top:20px;
+  -webkit-transform: translate3d(0, 500px, 0);
+          transform: translate3d(0, 500px, 0);
+  -webkit-animation: arrive 500ms ease-in-out 0.1s forwards;
+          animation: arrive 500ms ease-in-out 0.1s forwards;
+}
+
 .pickup-grid-container{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -109,6 +117,79 @@ padding: 20px;   /* height: 150px; adds the height to red box */
   text-align: center;
   color:rgb(48, 171, 187);
   font-size: 20px;
+}
+
+/**
+cod grid container css
+*/
+.cod-grid-container{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 60px);
+  background-color: yellow; 
+  /* background-color: white; */
+  color: black;
+  width: 40fr;
+  padding: 10px;
+  grid-gap: 0px;
+  border-radius: 6px;
+  width:50%;
+  text-align: center;
+  margin: auto;
+  
+}
+.codheading{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+  color:rgb(32, 122, 134);
+  font-size: 20px;
+}
+
+.form {
+  margin-top: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0;
+  width: 50%;
+  margin: auto;
+  -webkit-transform: translate3d(0, 500px, 0);
+          transform: translate3d(0, 500px, 0);
+  -webkit-animation: arrive 500ms ease-in-out 0.1s forwards;
+          animation: arrive 500ms ease-in-out 0.1s forwards;
+}
+
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-family: "Roboto";
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.form__input:focus {
+  background: #f7f7f7;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-family: "Roboto";
+  outline: 0;
+  border: 0;
+  color: white;
+  background: lightslategray;
+  cursor: pointer;
+  
+}
+.btn:hover {
+  background:darkslategray;
+
 }
 
 
