@@ -14,7 +14,9 @@
   <!-- <script src="//code.angularjs.org/1.8.0/angular.min.js"></script>
   <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
   <script src="assets/js/checkout.js"></script> -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="asserts/js/checkout.js"></script>
 
 </head>
 
@@ -79,15 +81,15 @@
               <div class="codheading" ><h2>Delivary Address</h2></div>
 
               <div class="form__group">
-                  <input type="text" placeholder="Address Line 1" class="form__input" required ="true"/>
+                  <input type="text" placeholder="Address Line 1" class="form__input" required/>
               </div>
               
               <div class="form__group">
-                  <input type="email" placeholder="Address Line 2" class="form__input" required ="true"/>
+                  <input type="email" placeholder="Address Line 2" class="form__input" required/>
               </div>
               
               <div class="form__group">
-                  <input type="password" placeholder="Phone Number" class="form__input" required ="true"/>
+                  <input type="password" placeholder="Phone Number" class="form__input" required/>
               </div>
               
               <button class="btn btn-primary" type="button">Deliver To This Address</button>
@@ -95,8 +97,59 @@
 
         </section>
       </div>
+
       <div ng-switch-when="Card Payment" class="animate-switch">
         <!-- <div class="card__option"></div> -->
+        <section class="card__grid">
+
+          <!-- <div class="codheading" ><h2>Delivary Address</h2></div> -->
+
+            <form class="form">
+              <div class="cardheading" ><h2>Enetr Card Details</h2></div>
+
+              <div class="form__group">
+                  <input type="text" placeholder="Name On Card" class="form__input" required/>
+              </div>
+              
+              <div class="form__group">
+                  <input type="email" placeholder="Credit Card Number" class="form__input" required/>
+              </div>
+              
+              <div class="form__group">
+              <select name="Month" class="form__input__select">
+                <option>- Month -</option>
+                <option value="January">January</option>
+                <option value="Febuary">Febuary</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+                </select>
+                <select name="Year" class="form__input__select">
+                  <option>year</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                </select>
+               </div>
+
+               <div class="form__group">
+                <input type="email" placeholder="cvv" class="form__input" required/>
+            </div>
+              
+              <button class="btn btn-primary" type="button">Make Payment</button>
+          </form>
+
+        </section>
 
       </div>
     </div>

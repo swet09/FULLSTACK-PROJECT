@@ -173,6 +173,19 @@ cod grid container css
 }
 .form__input:focus {
   background: #f7f7f7;
+
+}
+
+.form__input__select{
+  display: inline;
+  font-family: "Roboto";
+  border: 0;
+  outline: 0;
+  transition: 0.3s;
+  width: 49.3%;
+  -webkit-appearance: none;
+padding: 15px;
+color: grey;
 }
 
 .btn {
@@ -188,10 +201,13 @@ cod grid container css
   
 }
 .btn:hover {
-  background:darkslategray;
+  background:rgb(95, 163, 163);
 
 }
-
+.cardheading{
+  color:rgb(32, 122, 134);
+text-align: center;
+}
 
 @-webkit-keyframes NO {
   from, to {
