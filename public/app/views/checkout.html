@@ -47,11 +47,36 @@
         
 
     </section>
+
   <h1>Hello</h1>
-    <div ng-switch="selection">
-      <div ng-switch-when="Pick Up"><h1>Pick Up</h1> </div>
-      <div ng-switch-when="Cash On Delivery"><h1>Cash On Delivery</h1> </div>
-      <div ng-switch-when="Card Payment"><h1>Card Payment</h1> </div>
+
+    <div ng-switch="selection" class="animate-switch-container">
+      <div ng-switch-when="Pick Up" class="animate-switch" id="pu">
+        <!-- <div class="picup__option"> -->
+          <section class="pickup-grid-container" class="pickup__grid">
+
+            <div class="puheading" ><h4>Pick Up</h4></div>
+
+            <div class="radiopu puButton1">
+              <input type="radio" id='pun' name='pickupOption' value="Pick Up">
+              <label for='pun'><b>Pick Up Now.</b></label>
+            </div>
+    
+            <div class="radiopu puButton2">
+              <input type="radio" id='pul' name='pickupOption' value="pick up later">
+              <label for='pul'><b>Pick up later</b></label>
+            </div>
+
+          </section>
+
+      </div>
+
+      <div ng-switch-when="Cash On Delivery" class="animate-switch">
+        <!-- <div class="cod__option"></div> -->
+      </div>
+      <div ng-switch-when="Card Payment" class="animate-switch">
+        <!-- <div class="card__option"></div> -->
+      </div>
     </div>
 
 </body>
