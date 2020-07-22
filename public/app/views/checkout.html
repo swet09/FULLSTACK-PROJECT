@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <base href="/">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>check-out-page</title>
-  <link rel="stylesheet" href="checkout.css">
-  <link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
-/>
+
+  <link rel="stylesheet" type="text/css"href="assets/css/checkout.css">
+
 </head>
-<body class="bg-dark">
-  <!--Radio Buttons displaying valid options for check-out-->
-  <div id="radios-parent" class="container  border rounded bg-light w-50 mx-auto mt-5 p-3">
-    <h4>Proceed To Check-Out</h4>
-  <div class="radio-options">
 
-    <div class="rad">
-    <input type="radio" id='pickUp' name='checkOutOption' value="Pick Up">
-    <label for='pickUp'>Pick Up</label>
-  </div>
-<div class="rad">
-    <input type="radio" id='cod' name='checkOutOption' value="Cash On Delivery">
-    <label for='cod'>Cash On Delivery</label>
-  </div>
-<div class="rad">
-    <input type="radio" id='card' name='checkOutOption' value="Card Payment">
-    <label for="card">Card Payment</label>
-  </div>
+<body>
 
-  </div>
-</div>
+  <header class="user__header">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+    <h4 class="user__title">Tasty Meal waiting for You!!!</h4>
+  </header>
+
+  <section class="grid-container" >
+
+    <div class="heading" ><h4>Choose Check-Out Option</h4></div>
+
+    <div class="radio Button1">
+      <input type="radio" id='pickUp' name='checkOutOption' value="Pick Up">
+      <label for='pickUp'><b>Pick Up</b></label>
+    </div>
+
+    <div class="radio Button2">
+      <input type="radio" id='cod' name='checkOutOption' value="Cash On Delivery">
+      <label for='cod'><b>Cash On Delivery</b></label>
+    </div>
+
+    <div class="radio Button3" >
+      <input type="radio" id='card' name='checkOutOption' value="Card Payment">
+      <label for='card'><b>Card Payment</b></label>
+    </div>
+
+  </section>
+
 </body>
 </html>

@@ -1,0 +1,77 @@
+
+ *{
+  font-family: "Roboto";
+ }
+
+ 
+  body{
+   padding-left: 25%;
+   padding-right: 25%;
+   padding-top: 40px ;
+  
+   background-size: 200% 100% !important;
+    -webkit-animation: move 10s ease infinite;
+            animation: move 10s ease infinite;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    background: linear-gradient(45deg, #4f9478 10%, #92b7dd 70%, #68e4e4 20%);
+    
+    height: 100vh;
+ } 
+
+ .grid-container{
+  opacity: 50;
+ }
+
+ .radio {
+  margin: 1px;
+ /* background-color: red; */
+  color: black;
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 30px;
+  font-size: 15px;  
+
+}
+
+ .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 60px);
+  background-color: white;
+  color: black;
+  width: 40fr;
+  padding: 10px;
+  grid-gap: 0px;
+  border-radius: 6px;
+}
+
+input[type=radio] {
+     float: left;
+      margin: 3px 3px 3px 3px;
+    }
+
+.heading{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+
+}
+
+.Button1{
+  /* background-color: green; */
+  padding-left: 60px;
+}
+.heading{
+color:rgb(48, 171, 187);
+font-size: 20px;
+}
+
+.user__header {
+  text-align: center;
+  opacity: 0.5;
+ padding-bottom: 0px;
+}
+
+.user__title{
+line-height: 0px;}
