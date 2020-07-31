@@ -189,8 +189,8 @@ color: grey;
 }
 
 .btn {
-  display: block;
-  width: 100%;
+  display: inline;
+  width: 42.39%;
   padding: 20px;
   font-family: "Roboto";
   outline: 0;
@@ -200,10 +200,12 @@ color: grey;
   cursor: pointer;
   
 }
+
 .btn:hover {
-  background:rgb(95, 163, 163);
+  color:rgb(13, 59, 59);
 
 }
+
 .cardheading{
   color:rgb(32, 122, 134);
 text-align: center;

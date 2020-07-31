@@ -27,20 +27,29 @@
     <h4 class="user__title">Tasty Meal waiting for You!!!</h4>
   </header>
 
-  <!-- <div ng-controller="radio__option"> -->
+  <!-- Choose Check-Out Option => ng-controller="radio__option" -->
+
+  <!--My grid container to hold the checkout option provider form-->
+
     <section class="grid-container" >
 
       <div class="heading" ><h4>Choose Check-Out Option</h4></div>
       
+      <!--1st option = pick up-->  
+
         <div class="radio Button1">
           <input ng-model="selection" type="radio" id='pickUp' name='checkOutOption' value="Pick Up">
           <label for='pickUp'><b>Pick Up</b></label>
         </div>
 
+      <!--2nd option = cod--> 
+
         <div class="radio Button2">
           <input ng-model="selection" type="radio" id='cod' name='checkOutOption' value="Cash On Delivery">
           <label for='cod'><b>Cash On Delivery</b></label>
         </div>
+
+      <!--3rd option = card pay--> 
 
         <div class="radio Button3" >
           <input ng-model="selection" type="radio" id='card' name='checkOutOption' value="Card Payment">
@@ -50,11 +59,22 @@
 
     </section>
 
-    <div ng-switch="selection" class="animate-switch-container">
-      <div ng-switch-when="Pick Up" class="pu">
-        <!-- <div class="picup__option"> -->
-          <section class="pickup-grid-container" class="pickup__grid">
+    <!--Do the appropriate action based on the switch selected
+    There will be 3 option switches, below are their forms
+    1. pick up option
+    2. cash on delivary
+    3. card payment-->
 
+    <div ng-switch="selection" class="animate-switch-container">
+
+      <!--1st switch = pich Up switch-->
+
+      <div ng-switch-when="Pick Up" class="pu">
+
+        <!--1st option = pick up option form--> 
+
+          <section class="pickup-grid-container" class="pickup__grid">
+           <!--have to keep form here...-->   
             <div class="puheading" ><h4>Pick Up</h4></div>
 
             <div class="radiopu puButton1">
@@ -71,52 +91,64 @@
 
       </div>
 
+      <!--2nd switch = Cash On Delivery switch-->
+      
       <div ng-switch-when="Cash On Delivery" class="animate-switch">
-        <!-- <div class="cod__option"></div> -->
+
+        <!--2nd option = cod option form--> 
+        
         <section class="cod__grid">
 
-          <!-- <div class="codheading" ><h2>Delivary Address</h2></div> -->
+          <form action="#" method="POST" class="form">
+           
+            <div class="codheading" ><h2>Delivary Address</h2></div> 
 
-            <form class="form">
-              <div class="codheading" ><h2>Delivary Address</h2></div>
+             <div class="form-group">
+               <input type="text" placeholder="Address Line 1" class="form__input" id="Addr1" required/>
+              </div>
 
-              <div class="form__group">
-                  <input type="text" placeholder="Address Line 1" class="form__input" required/>
-              </div>
-              
-              <div class="form__group">
-                  <input type="email" placeholder="Address Line 2" class="form__input" required/>
-              </div>
-              
-              <div class="form__group">
-                  <input type="password" placeholder="Phone Number" class="form__input" required/>
-              </div>
-              
-              <button class="btn btn-primary" type="button">Deliver To This Address</button>
-          </form>
+              <div class="form-group">
+                <input type="text" placeholder="Address Line 2" class="form__input" id="Addr2" required/>
+               </div>
+
+               <div class="form-group">
+                <input type="number" placeholder="Phone Number" class="form__input" id="pno" required/>
+               </div>
+      
+             <div class = "btn btn-toolbar" id="buttons">
+               <button id="submit" class=" btn btn-primary mb-2" type="submit" >Submit</button>
+               <button id="reset" class=" btn btn-secondary mb-2" type="reset" >Reset</button>
+             </div> 
+
+           </form>
 
         </section>
       </div>
 
+      <!--3rd switch = Card Payment switch-->
+
       <div ng-switch-when="Card Payment" class="animate-switch">
-        <!-- <div class="card__option"></div> -->
+
+        <!--3rd option = card pay option form-->
+
         <section class="card__grid">
 
-          <!-- <div class="codheading" ><h2>Delivary Address</h2></div> -->
+            <form action="#" method="POST" class="form">
 
-            <form class="form">
               <div class="cardheading" ><h2>Enetr Card Details</h2></div>
 
-              <div class="form__group">
-                  <input type="text" placeholder="Name On Card" class="form__input" required/>
+              <div class="form-group">
+                  <input type="text" placeholder="Name On Card" class="form__input" id ="name" required/>
               </div>
               
-              <div class="form__group">
-                  <input type="email" placeholder="Credit Card Number" class="form__input" required/>
+              <div class="form-group">
+                  <input type="number" placeholder="Credit Card Number" class="form__input" id="number" required/>
               </div>
               
-              <div class="form__group">
-              <select name="Month" class="form__input__select">
+              <div class="form-group">
+
+              <select name="Month" class="form__input__select" id="month">
+
                 <option>- Month -</option>
                 <option value="January">January</option>
                 <option value="Febuary">Febuary</option>
@@ -130,8 +162,11 @@
                 <option value="October">October</option>
                 <option value="November">November</option>
                 <option value="December">December</option>
+
                 </select>
-                <select name="Year" class="form__input__select">
+
+                <select name="Year" class="form__input__select" id="year">
+
                   <option>year</option>
                   <option value="2020">2020</option>
                   <option value="2021">2021</option>
@@ -139,14 +174,19 @@
                   <option value="2023">2023</option>
                   <option value="2024">2024</option>
                   <option value="2025">2025</option>
+
                 </select>
                </div>
 
-               <div class="form__group">
-                <input type="email" placeholder="cvv" class="form__input" required/>
-            </div>
+              <div class="form-group">
+                <input type="number" placeholder="cvv" class="form__input" id="cvv" required/>
+              </div>
               
-              <button class="btn btn-primary" type="button">Make Payment</button>
+            <div class = "btn btn-toolbar" id="buttons">
+              <button id="make-payment" class=" btn btn-primary mb-2" type="submit" >Make Payment</button>
+              <button id="reset" class=" btn btn-secondary mb-2" type="reset" >Reset</button>
+
+            </div>          
           </form>
 
         </section>
@@ -156,3 +196,5 @@
 
 </body>
 </html>
+
+
