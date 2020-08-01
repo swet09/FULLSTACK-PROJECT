@@ -78,20 +78,20 @@
             <h1 class="user__title">Tasty Meal waiting for You!!!</h1>
         </header>
         
-        <form class="form">
+        <form action="/userRegister" method="POST" class="form">
             <div class="form__group">
-                <input type="text" placeholder="Username" class="form__input" required ="true"/>
+                <input type="text" placeholder="Username" name = "username" class="form__input" required ="true"/>
             </div>
             
             <div class="form__group">
-                <input type="email" placeholder="Email" class="form__input" required ="true"/>
+                <input type="email" placeholder="Email" name="email" class="form__input" required ="true"/>
             </div>
             
             <div class="form__group">
-                <input type="password" placeholder="Password" class="form__input" required ="true"/>
+                <input type="password" placeholder="Password" name = "password" class="form__input" required ="true"/>
             </div>
             
-            <button class="btn btn-primary" type="button">Register</button>
+            <button class="btn btn-primary" type="submit">Register</button>
         </form>
     </div>
 
