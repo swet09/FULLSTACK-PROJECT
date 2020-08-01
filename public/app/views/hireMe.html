@@ -73,10 +73,12 @@
             <h1>A balanced diet is a taco in each hand!</h1>
           </div>
           <p>Hiring Information</p>
+
           <div class="item">
             <label for="name">Name<span>*</span></label>
-            <input id="name" type="text" name="name" required/>
+            <input id="name" type="text" name="name" input class="form-control input-sm"required/>
           </div>
+          
           <div class="item">
             <label for="email">Email Address<span>*</span></label>
             <input id="email" type="email" name="email" required/>
@@ -95,11 +97,11 @@
           </div>
           <div class="item">
             <label for="zip">Zip<span>*</span></label>
-            <input id="zip" type="text" name="zip" required/>
+            <input id="zip" type="number" name="zip" pattern="[0-9]{6}" required/>
           </div>
           <div class="item">
             <label for="phone">Phone<span>*</span></label>
-            <input id="phone" type="number" name="phone" required/>
+            <input id="phone" type="number" name="phone"  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required/>
           </div>
           <div class="item">
             <label for="bdate">Date of Birth<span>*</span></label>
@@ -120,30 +122,23 @@
             </div>
           </div>
           <div class="item">
-            <p>T-Shirt Size</p>
-            <select>
-              <option selected value="" disabled selected></option>
-              <option value="course-type" >Small</option>
-              <option value="short-courses">Medium</option>
-              <option value="featured-courses">Large</option>
-              <option value="undergraduate">Extra Large</option>
-            </select>
-          </div>
-          <div class="question">
-            <label>Choose Race</label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_3" name="race"/>
-                <label for="radio_3" class="radio"><span>5k - $25</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_4" name="race"/>
-                <label for="radio_4" class="radio"><span>10K - $25</span></label>
-              </div>
+            <label>Prefered Shift</label>
+            <div>
+                <select>
+                    <option selected value="" disabled selected></option>
+                    <option value="course-type" >7AM - 11AM</option>
+                    <option value="short-courses">11AM - 3PM</option>
+                    <option value="featured-courses">3PM - 8PM</option>
+                    <option value="undergraduate">8PM - 11PM</option>
+                </select>
             </div>
           </div>
+          <div>
+              <label for="textbox">Tell me about yourself</label>
+               <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          </div>
           <div class="btn-block">
-            <button type="submit" href="/">SUBMIT</button>
+            <button type="submit" href="/"><span class="glyphicon glyphicon-send"></span> Hire</button>
           </div>
         </form>
       </div>
