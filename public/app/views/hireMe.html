@@ -5,14 +5,14 @@
     <base href="/">
     <meta charset="utf-8">
     
+    <!-- Cascade Style Sheets -->
     
-    <link rel="stylesheet" type="text/css" href="assets/css/register.css">
-
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css"> 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/hireMeStyle.css">
     
 
     <!-- Add icon library -->
@@ -23,16 +23,17 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
     
-    <title>register</title>
+    <title>Hire Me</title>
 
 </head>
 
 <body ng-app="userApp">
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="container">
+  
      
-     <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
          <a class="navbar-brand" href="#">La Taco</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
@@ -47,7 +48,7 @@
                      <a class="nav-link" href="#">Order</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="app/views/hireMe.html">HireMe</a>
+                    <a class="nav-link btn text-white" type="button" href="app/views/hireMe.html">Hire Me</a> 
                  </li>
                  <li class="nav-item">
                      <a class="nav-link" href="#">About</a>
@@ -66,29 +67,31 @@
              </ul>
          </div>
  
-     </nav>
+    </nav>
        
- </div>
+ 
+    <section id="contact" class="site-section section-form text-center">
+        <div class="container">
+
+            <h3>Contact</h3>
+            <img src="/public/assets/images/lines.svg" class="img-lines" alt="lines">
+            <form>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" name="name" class="form-control mt-x-0" placeholder="Name" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>   
+                    </div>
+                    <div class="col-sm-12">
+                        <textarea name="message" id="mesaage" class="form-control" placeholder="Message" required></textarea>
+                    </div>
+                </div>
+                <button href="#" class="btn btn-border" type="submit">Hire Me <span class="glyphicon glyphicon-send"></span></button>
+            </form>
+        </div>
+    </section>
     
-    <div class="user">
-        <header class="user__header">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
-            <h1 class="user__title">Tasty Meal waiting for You!!!</h1>
-        </header>
-        
-        <form class="form">
-            <div class="form__group">
-                <input type="text" placeholder="Username" class="form__input" required ="true"/>
-            </div>
-            
-            
-            <div class="form__group">
-                <input type="password" placeholder="Password" class="form__input" required ="true"/>
-            </div>
-            
-            <button class="btn btn-primary" type="button">Log In</button>
-        </form>
-    </div>
     
 </body>
 

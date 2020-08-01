@@ -1,0 +1,64 @@
+/* Section: Form*/
+.section-form {
+    padding-bottom: 120px;
+}
+
+.section-form .btn {
+    margin-top: 40px;
+}
+
+
+
+/* site-section */
+.site-section p.counter {
+    font-size: 100px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0;
+    line-height: 0.8;
+}
+
+
+.site-section {
+    padding-top: 120px;
+ }
+ 
+ .site-section h2,
+ .site-section h3 {
+     font-size: 36px;
+     margin: 0;
+     text-transform: uppercase;
+ }
+ 
+ .img-lines {
+     margin: 15px 0 40px;
+ }
+ 
+ .site-section p {
+     margin-bottom: 35px;
+ }
+ 
+ 
+/* Input fields */
+.form-control {
+    padding-left: 10px;
+    border: 0;
+    border-bottom: 1px solid #212121;
+    border-radius: 0;
+    background-color: transparent; 
+    box-shadow: none;
+    outline: 0 none transparent;
+    -webkit-appearance:none;
+ }
+
+textarea {
+    margin-top: 40px;
+    min-height: 200px;
+    resize: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-bottom-color: #e1e1e1;
+}
+
