@@ -11,7 +11,7 @@ const exphbs = require('express-handlebars');
 const checkoutRoute = require(path.join(__dirname + '/public/controllers/check1'));
 const checkCash = require(path.join(__dirname + '/public/controllers/check2'));
 const checkCard = require(path.join(__dirname + '/public/controllers/check3'));
-
+const register = require(path.join(__dirname + '/public/controllers/userController'));
 
 app.use(morgan('dev')); // Morgan Middleware
 app.use(bodyParser.json()); // Body-parser middleware
@@ -22,6 +22,7 @@ app.use('/api', appRoutes); // Assign name to end points (e.g., '/api/management
 app.use('/checkout', checkoutRoute);
 app.use('/cashPay/pay_method', checkCash);
 app.use('/cardPay', checkCard);
+app.use('/userRegister', register)
 
 app.use(bodyParser.urlencoded({
   extended: true
