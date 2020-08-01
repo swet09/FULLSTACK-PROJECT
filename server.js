@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public')); // Allow front end to access pub
 app.use('/api', appRoutes); // Assign name to end points (e.g., '/api/management/', '/api/users' ,etc. )
 
 app.use('/checkout', checkoutRoute);
-app.use('/cashPay', checkCash);
+app.use('/cashPay/pay_method', checkCash);
 app.use('/cardPay', checkCard);
 
 app.use(bodyParser.urlencoded({
