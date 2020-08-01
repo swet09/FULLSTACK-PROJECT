@@ -8,10 +8,8 @@
     <!-- Cascade Style Sheets -->
     
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css"> 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="assets/css/hireMeStyle.css">
     
 
@@ -29,7 +27,7 @@
 
 </head>
 
-<body ng-app="userApp">
+<body>
     <!-- Collect the nav links, forms, and other content for toggling -->
   
      
@@ -69,29 +67,87 @@
  
     </nav>
        
- 
-    <section id="contact" class="site-section section-form text-center">
-        <div class="container">
-
-            <h3>Contact</h3>
-            <img src="/public/assets/images/lines.svg" class="img-lines" alt="lines">
-            <form>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <input type="text" name="name" class="form-control mt-x-0" placeholder="Name" required>
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="email" name="email" class="form-control" placeholder="Email" required>   
-                    </div>
-                    <div class="col-sm-12">
-                        <textarea name="message" id="mesaage" class="form-control" placeholder="Message" required></textarea>
-                    </div>
-                </div>
-                <button href="#" class="btn btn-border" type="submit">Hire Me <span class="glyphicon glyphicon-send"></span></button>
-            </form>
-        </div>
-    </section>
-    
+    <div class="testbox">
+        <form action="/">
+          <div class="banner">
+            <h1>A balanced diet is a taco in each hand!</h1>
+          </div>
+          <p>Hiring Information</p>
+          <div class="item">
+            <label for="name">Name<span>*</span></label>
+            <input id="name" type="text" name="name" required/>
+          </div>
+          <div class="item">
+            <label for="email">Email Address<span>*</span></label>
+            <input id="email" type="email" name="email" required/>
+          </div>
+          <div class="item">
+            <label for="address">Address<span>*</span></label>
+            <input id="address" type="address" name="address" required/>
+          </div>
+          <div class="item">
+            <label for="city">City<span>*</span></label>
+            <input id="city" type="text" name="city" required/>
+          </div>
+          <div class="item">
+            <label for="state">State<span>*</span></label>
+            <input id="state" type="text" name="state" required/>
+          </div>
+          <div class="item">
+            <label for="zip">Zip<span>*</span></label>
+            <input id="zip" type="text" name="zip" required/>
+          </div>
+          <div class="item">
+            <label for="phone">Phone<span>*</span></label>
+            <input id="phone" type="number" name="phone" required/>
+          </div>
+          <div class="item">
+            <label for="bdate">Date of Birth<span>*</span></label>
+            <input id="bdate" type="date" name="bdate" required/>
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="question">
+            <label>Gender</label>
+            <div class="question-answer">
+              <div>
+                <input type="radio" value="none" id="radio_1" name="gender"/>
+                <label for="radio_1" class="radio"><span>Male</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="none" id="radio_2" name="gender"/>
+                <label for="radio_2" class="radio"><span>Female</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <p>T-Shirt Size</p>
+            <select>
+              <option selected value="" disabled selected></option>
+              <option value="course-type" >Small</option>
+              <option value="short-courses">Medium</option>
+              <option value="featured-courses">Large</option>
+              <option value="undergraduate">Extra Large</option>
+            </select>
+          </div>
+          <div class="question">
+            <label>Choose Race</label>
+            <div class="question-answer">
+              <div>
+                <input type="radio" value="none" id="radio_3" name="race"/>
+                <label for="radio_3" class="radio"><span>5k - $25</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="none" id="radio_4" name="race"/>
+                <label for="radio_4" class="radio"><span>10K - $25</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="btn-block">
+            <button type="submit" href="/">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+     
     
 </body>
 
