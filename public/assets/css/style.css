@@ -693,12 +693,6 @@ section h3.section-subheading {
     margin-top: 0;
 }
 
-section#contact {
-    /*    background-color: #222;
-    background-image: url(../images/after_evac_by_tryingtofly-dauf4er.jpg);
-    background-position: center;
-    background-repeat: no-repeat;*/
-}
 
 section#contact .section-heading {
     color: #fff;
@@ -897,10 +891,6 @@ img::selection {
 
 img::-moz-selection {
     background: 0 0;
-}
-
-body {
-    webkit-tap-highlight-color: #1ee2e7;
 }
 
 
