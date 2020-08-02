@@ -39,11 +39,15 @@
       <div class="heading" ><h4>Select Your Payment Method</h4></div>
       
       <!--1st Payment Mode = cash-->  
-<form action="/checkout/status" method="post">
+
+      <form action="/checkout/status" method="post">
+
         <div class="radio Button1">
           <input ng-model="selection" type="radio" id='cash' name='cashPay' value="cash">
           <label for='cash'><b>Pay Using Cash.</b></label>
-        </div></form>
+        </div>
+
+      </form>
 
       <!--2nd Payment Mode = card--> 
 
@@ -78,14 +82,17 @@
 
            
             <div class="row">
-                <div class="col-md-6 offset-md-3" style="background-color: #fff;margin-top: 25px;padding:20px;">
-                  <form action="/checkout/status" method="POST" autocomplete="off">
-                    <h3>Complete Yor Payment</h3>
+
+                <div class="col-md-6 offset-md-3" class="form">
+
+              <form action="/checkout/status" method="POST" autocomplete="off" class="cardPay-form">
+
+                    <h3 class="heading">Complete Yor Payment</h3>
                     <img class="img-fluid cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
                     
                   <div class="form-group">
                       <label for="cc-number" class="control-label mb-1">Card Number</label>
-                      <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" required>
+                      <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" placeholder="card number" required>
                       <!-- <span class="invalid-feedback">Enter a valid 12 to 16 digit card number</span> -->
                   </div>
         
@@ -102,7 +109,7 @@
                       <div class="col-6">
                         <label for="cvv" class="control-label mb-1">CVV</label>
                         <div class="input-group">
-                            <input id="cvv" name="cvv" type="tel" class="form-control cc-cvc" required>
+                            <input id="cvv" name="cvv" type="tel" class="form-control cc-cvc" placeholder="cvv" required>
                             <!-- <span class="invalid-feedback order-last">Enter the 3-digit code on back</span> -->
                         
                         </div>
@@ -117,7 +124,7 @@
                 </div>
                 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-credit-card"></i> Make Payment</button>
+                        <button type="submit" class="btn btn-primary" class="mak_pay"><i class="fa fa-credit-card"></i> Make Payment</button>
                     </div>
                 </form>
           
