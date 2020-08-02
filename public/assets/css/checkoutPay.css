@@ -1,0 +1,17 @@
+*{
+  font-family: "Roboto";
+ }
+body{
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 40px ;
+ 
+  background-size: 200% 100% !important;
+   -webkit-animation: move 10s ease infinite;
+           animation: move 10s ease infinite;
+   -webkit-transform: translate3d(0, 0, 0);
+           transform: translate3d(0, 0, 0);
+   background: linear-gradient(45deg, #4f9478 10%, #92b7dd 70%, #68e4e4 20%);
+   
+   height: 100vh;
+} 

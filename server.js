@@ -8,9 +8,11 @@ var router = express.Router();
 var appRoutes = require('./app/routes/api')(router);
 var path = require('path');
 const exphbs = require('express-handlebars');
-const checkoutRoute = require(path.join(__dirname + '/public/controllers/check1'));
-const checkCash = require(path.join(__dirname + '/public/controllers/check2'));
-const checkCard = require(path.join(__dirname + '/public/controllers/check3'));
+
+const checkoutRoute = require(path.join(__dirname + '/public/controllers/checkout'));
+const pickPay = require(path.join(__dirname + '/public/controllers/pickPay'));
+const deliveryPay = require(path.join(__dirname + '/public/controllers/deliveryPay'));
+const checkoutStatus = require(path.join(__dirname + '/public/controllers/checkStatus'));
 const register = require(path.join(__dirname + '/public/controllers/userController'));
 
 app.use(morgan('dev')); // Morgan Middleware
@@ -20,8 +22,9 @@ app.use(express.static(__dirname + '/public')); // Allow front end to access pub
 app.use('/api', appRoutes); // Assign name to end points (e.g., '/api/management/', '/api/users' ,etc. )
 
 app.use('/checkout', checkoutRoute);
-app.use('/cashPay/pay_method', checkCash);
-app.use('/cardPay', checkCard);
+app.use('/checkout/pickup/payment_method', pickPay);
+app.use('/checkout/delivery/payment_method', deliveryPay);
+app.use('/checkout/status', checkoutStatus);
 app.use('/userRegister', register)
 
 app.use(bodyParser.urlencoded({

@@ -61,52 +61,51 @@
       <div ng-switch-when="Pick Up" class="pu">
 
         <section class="pickup-grid-container">
+
           <div class="puheading" ><h4>Pick Up Time?</h4></div>
  
-          <div class="select-option">  
-          <form class="in-line">
-
-              
-              <label class="select-label" for='select-time'><b>Select Your PickUp Time.</b></label>&nbsp&nbsp
-              
-
-              <select class="select-time" name="select-time" id="select-time">
-                <option value="Now">Now</option>
-                <option value="10:00AM">10:00 AM</option>
-                <option value="10:30AM">10:30 AM</option>
-                <option value="11:00AM">11:00 AM</option>
-                <option value="11:30AM">11:30 AM</option>
-                <option value="12:00PM">12:00 PM</option>
-                <option value="12:30PM">12:30 PM</option>
-                <option value="01:00PM">01:00 PM</option>
-                <option value="01:30PM">01:30 PM</option>
-                <option value="05:00PM">05:00 AM</option>
-                <option value="05:30PM">05:30 AM</option>
-                <option value="06:00PM">06:00 PM</option>
-                <option value="16:30PM">06:30 PM</option>
-                <option value="07:00PM">07:00 PM</option>
-                <option value="07:30PM">07:30 PM</option>
-              </select></br></br>
+            <div class="select-option">  
             
-              <button id="select-ok" class="select-ok" class=" btn btn-primary mb-2" type="submit" >Proceed</button>
+              <form action="/checkout/pickup/payment_method" method="POST" class="in-line">
+                
+                <label class="select-label" for='select-time'><b>Select Your PickUp Time.</b></label>&nbsp&nbsp
+                <select class="select-time" name="select-time" id="select-time">
+                  <option value="Now">Now</option>
+                  <option value="10:00AM">10:00 AM</option>
+                  <option value="10:30AM">10:30 AM</option>
+                  <option value="11:00AM">11:00 AM</option>
+                  <option value="11:30AM">11:30 AM</option>
+                  <option value="12:00PM">12:00 PM</option>
+                  <option value="12:30PM">12:30 PM</option>
+                  <option value="01:00PM">01:00 PM</option>
+                  <option value="01:30PM">01:30 PM</option>
+                  <option value="05:00PM">05:00 AM</option>
+                  <option value="05:30PM">05:30 AM</option>
+                  <option value="06:00PM">06:00 PM</option>
+                  <option value="16:30PM">06:30 PM</option>
+                  <option value="07:00PM">07:00 PM</option>
+                  <option value="07:30PM">07:30 PM</option>
+                </select></br></br>
+            
+                <button id="select-ok" class="select-ok" class=" btn btn-primary mb-2" type="submit" >Proceed</button>
              
+              </form>
             
-        
-            </form>
-          </div>
-          </section>
+            </div>
+          
+        </section>
 
       </div>
 
-      <!--2nd switch = Cash On Delivery switch-->
+      <!--2nd switch = Delivery switch-->
       
-      <div ng-switch-when="Cash On Delivery" class="animate-switch">
+      <div ng-switch-when="Delivery" class="animate-switch">
 
-        <!--2nd option = cod option form--> 
+        <!--2nd option = Delivery option form--> 
         
-        <section class="cod__grid">
+        <section class="Delivery__grid">
 
-          <form action="/cashPay/pay_method" method="POST" class="form">
+          <form action="checkout/delivery/payment_method" method="POST" class="form">
            
             <div class="codheading" ><h2>Delivary Address</h2></div> 
 
@@ -127,78 +126,12 @@
                <button id="reset" class=" btn btn-secondary mb-2" type="reset" >Reset</button>
              </div> 
 
-           </form>
-
-        </section>
-      </div>
-
-      <!--3rd switch = Card Payment switch-->
-
-      <div ng-switch-when="Card Payment" class="animate-switch">
-
-        <!--3rd option = card pay option form-->
-
-        <section class="card__grid">
-
-            <form action="./cardPay" method="POST" class="form">
-
-              <div class="cardheading" ><h2>Enetr Card Details</h2></div>
-
-              <div class="form-group">
-                  <input type="text" placeholder="Name On Card" class="form__input" id ="name" required/>
-              </div>
-              
-              <div class="form-group">
-                  <input type="number" placeholder="Credit Card Number" class="form__input" id="number" required/>
-              </div>
-              
-              <div class="form-group">
-
-              <select name="Month" class="form__input__select" id="month">
-
-                <option>- Month -</option>
-                <option value="January">January</option>
-                <option value="Febuary">Febuary</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <option value="September">September</option>
-                <option value="October">October</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
-
-                </select>
-
-                <select name="Year" class="form__input__select" id="year">
-
-                  <option>year</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-
-                </select>
-               </div>
-
-              <div class="form-group">
-                <input type="number" placeholder="cvv" class="form__input" id="cvv" required/>
-              </div>
-              
-            <div class = "btn btn-toolbar" id="buttons">
-              <button id="make-payment" class=" btn btn-primary mb-2" type="submit" >Make Payment</button>
-              <button id="reset" class=" btn btn-secondary mb-2" type="reset" >Reset</button>
-
-            </div>          
           </form>
 
         </section>
 
       </div>
+
     </div>
 
 </body>
