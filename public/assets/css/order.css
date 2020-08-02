@@ -1,12 +1,12 @@
 body {
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     color: #555;
   }
   img {
-    float: center;
-    width:  100px;
-    height: 100px;
+    float: left;
+    width:  50px;
+    height: 120px;
     object-fit: cover;
   }
   a {
@@ -16,6 +16,30 @@ body {
   * {
     box-sizing: border-box;
   }
+
+  p {
+    padding: 2px 16px;
+    font-size: 18px;
+  }
+
+ .space{
+   padding-right: 20px;
+ }
+
+  label {
+    padding: 2px 16px;
+    font-size: 15px;
+  }
+
+  option{
+    float: center;
+    font-size: 15px;
+  }
+
+  select{
+    float: center;
+    font-size: 15px;
+  }
   
   .card {
     border: rgb(194, 194, 194) 1px solid;
@@ -24,7 +48,7 @@ body {
     padding: 0 15px;
   }
   
-  .container {
+  .row {
     padding: 2px 16px;
   }
   
@@ -45,13 +69,11 @@ body {
     margin: 15px 0;
   }
   
-  footer h3{
+ button{
     margin: 0 0 20px 0;
+    float: right;
   }
-  
-  footer a{
-    text-decoration: none;
-  }
+
   
   .fa{
     font-size: 12px;
