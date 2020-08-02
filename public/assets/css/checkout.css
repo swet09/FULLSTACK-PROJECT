@@ -36,7 +36,7 @@
 
  .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 60px);
   background-color: white;
   color: black;
@@ -88,7 +88,7 @@ line-height: 0px;}
 
 .pickup-grid-container{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(2, 60px);
   /* background-color: yellow; */
   background-color: white;
@@ -97,11 +97,18 @@ line-height: 0px;}
   padding: 10px;
   grid-gap: 0px;
   border-radius: 6px;
-  width:50%;
+  width:60%;
   text-align: center;
   margin: auto;
+  height: 150px;
 
   /* height:100px;adds height to yellow box */
+}
+
+.picup-inner-grid-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 60px);
 }
 
 .radiopu {
@@ -113,10 +120,32 @@ padding: 20px;   /* height: 150px; adds the height to red box */
 
 .puheading{
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 3;
   text-align: center;
   color:rgb(48, 171, 187);
   font-size: 20px;
+}
+
+.select-ok{
+  display: inline;
+  width: 42.39%;
+  padding: 10px;
+  font-family: "Roboto";
+  outline: 0;
+  border: 0;
+  color: white;
+  background: rgb(48, 171, 187);
+  cursor: pointer;
+  
+}
+
+.select-ok:hover {
+  background: rgb(48, 144, 156);
+  color:black;
+}
+
+.select-option{
+  padding-top: 20px;
 }
 
 /**
