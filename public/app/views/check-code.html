@@ -3,56 +3,67 @@
 <head>
 
   <base href="/">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>check-out-page</title>
 
-  <!--CSS files-->
   <link rel="stylesheet" type="text/css" href="assets/css/checkout.css">
 
-  <!--Java Script Files-->
+  <!-- <script src="//code.angularjs.org/1.8.0/angular.min.js"></script>
+  <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
+  <script src="assets/js/checkout.js"></script> -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="asserts/js/checkout.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
 <body ng-app="">
-
-  <!--Header Logo-->
 
   <header class="user__header">
     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
     <h4 class="user__title">Tasty Meal waiting for You!!!</h4>
   </header>
 
-  <!--A grid container to hold the checkout options provider form. 1. PickUp 2. Delivery-->
+  <!-- Choose Check-Out Option => ng-controller="radio__option" -->
+
+  <!--My grid container to hold the checkout option provider form-->
 
     <section class="grid-container" >
 
-      <div class="heading" ><h4>How do you want to get your Meal?</h4></div>
+      <div class="heading" ><h4>Choose Check-Out Option</h4></div>
       
       <!--1st option = pick up-->  
 
         <div class="radio Button1">
           <input ng-model="selection" type="radio" id='pickUp' name='checkOutOption' value="Pick Up">
-          <label for='pickUp'><b>Pick Up From Store.</b></label>
+          <label for='pickUp'><b>Pick Up</b></label>
         </div>
 
-      <!--2nd option = Delivery--> 
+      <!--2nd option = cod--> 
 
         <div class="radio Button2">
-          <input ng-model="selection" type="radio" id='Delivery' name='checkOutOption' value="Delivery">
-          <label for='Delivery'><b>Deliver To Your Home?</b></label>
+          <input ng-model="selection" type="radio" id='cod' name='checkOutOption' value="Cash On Delivery">
+          <label for='cod'><b>Cash On Delivery</b></label>
         </div>
+
+      <!--3rd option = card pay--> 
+
+        <div class="radio Button3" >
+          <input ng-model="selection" type="radio" id='card' name='checkOutOption' value="Card Payment">
+          <label for='card'><b>Card Payment</b></label>
+        </div>
+        
 
     </section>
 
     <!--Do the appropriate action based on the switch selected
-    There will be 2 option switches, below are their forms
+    There will be 3 option switches, below are their forms
     1. pick up option
-    2. Delivary option-->
+    2. cash on delivary
+    3. card payment-->
 
     <div ng-switch="selection" class="animate-switch-container">
 
@@ -60,40 +71,22 @@
 
       <div ng-switch-when="Pick Up" class="pu">
 
-        <section class="pickup-grid-container">
-          <div class="puheading" ><h4>Pick Up Time?</h4></div>
- 
-          <div class="select-option">  
-          <form class="in-line">
+        <!--1st option = pick up option form--> 
 
-              
-              <label class="select-label" for='select-time'><b>Select Your PickUp Time.</b></label>&nbsp&nbsp
-              
+          <section class="pickup-grid-container" class="pickup__grid">
+           <!--have to keep form here...-->   
+            <div class="puheading" ><h4>Pick Up</h4></div>
 
-              <select class="select-time" name="select-time" id="select-time">
-                <option value="Now">Now</option>
-                <option value="10:00AM">10:00 AM</option>
-                <option value="10:30AM">10:30 AM</option>
-                <option value="11:00AM">11:00 AM</option>
-                <option value="11:30AM">11:30 AM</option>
-                <option value="12:00PM">12:00 PM</option>
-                <option value="12:30PM">12:30 PM</option>
-                <option value="01:00PM">01:00 PM</option>
-                <option value="01:30PM">01:30 PM</option>
-                <option value="05:00PM">05:00 AM</option>
-                <option value="05:30PM">05:30 AM</option>
-                <option value="06:00PM">06:00 PM</option>
-                <option value="16:30PM">06:30 PM</option>
-                <option value="07:00PM">07:00 PM</option>
-                <option value="07:30PM">07:30 PM</option>
-              </select></br></br>
-            
-              <button id="select-ok" class="select-ok" class=" btn btn-primary mb-2" type="submit" >Proceed</button>
-             
-            
-        
-            </form>
-          </div>
+            <div class="radiopu puButton1">
+              <input type="radio" id='pun' name='pickupOption' value="Pick Up">
+              <label for='pun'><b>Pick Up Now.</b></label>
+            </div>
+    
+            <div class="radiopu puButton2">
+              <input type="radio" id='pul' name='pickupOption' value="pick up later">
+              <label for='pul'><b>Pick up later</b></label>
+            </div>
+
           </section>
 
       </div>
