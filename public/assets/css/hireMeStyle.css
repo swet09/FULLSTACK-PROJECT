@@ -34,7 +34,7 @@ html, body {
     .banner {
     position: relative;
     height: 600px;
-    background-image: url(../images/taco-man.png);
+    background-image: url(../images/tacoMan.png);
     background-size: cover;
     display: flex;
     justify-content: center;
