@@ -14,6 +14,7 @@ const pickPay = require(path.join(__dirname + '/public/controllers/pickPay'));
 const deliveryPay = require(path.join(__dirname + '/public/controllers/deliveryPay'));
 const checkoutStatus = require(path.join(__dirname + '/public/controllers/checkStatus'));
 const register = require(path.join(__dirname + '/public/controllers/userController'));
+const hireRoute = require(path.join(__dirname +'/public/controllers/hireMeStatus'))
 
 app.use(morgan('dev')); // Morgan Middleware
 app.use(bodyParser.json()); // Body-parser middleware
@@ -26,6 +27,7 @@ app.use('/checkout/pickup/payment_method', pickPay);
 app.use('/checkout/delivery/payment_method', deliveryPay);
 app.use('/checkout/status', checkoutStatus);
 app.use('/userRegister', register)
+app.use('/hireMeStatus', hireRoute);
 
 app.use(bodyParser.urlencoded({
   extended: true
