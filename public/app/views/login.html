@@ -79,14 +79,14 @@
             <h1 class="user__title">Tasty Meal waiting for You!!!</h1>
         </header>
         
-        <form class="form">
+        <form action="/login" method="POST" class="form">
             <div class="form__group">
-                <input type="text" placeholder="Username" class="form__input" required ="true"/>
+                <input type="text" placeholder="Username" class="form__input" name ="username" required ="true"/>
             </div>
             
             
             <div class="form__group">
-                <input type="password" placeholder="Password" class="form__input" required ="true"/>
+                <input type="password" placeholder="Password" class="form__input" name ="password" required ="true"/>
             </div>
             
             <button class="btn btn-primary" type="button">Log In</button>
