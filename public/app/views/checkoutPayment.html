@@ -9,17 +9,17 @@
 
   <!--CSS files-->
   <link rel="stylesheet" type="text/css" href="assets/css/checkoutPay.css">
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
   crossorigin="anonymous">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!--Java Script Files-->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="asserts/js/checkoutPayment.js"></script>
   <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>
   </script>
+  <script src="./asserts/js/checkoutPayment.js"></script>
 
 </head>
 
@@ -40,14 +40,14 @@
       
       <!--1st Payment Mode = cash-->  
 
-      <form action="/checkout/status" method="post">
+      <form action="/checkout/status" method="post" class="form-inline">
 
         <div class="radio Button1">
           <input ng-model="selection" type="radio" id='cash' name='cashPay' value="cash">
           <label for='cash'><b>Pay Using Cash.</b></label>
         </div>
 
-      </form>
+      
 
       <!--2nd Payment Mode = card--> 
 
@@ -56,7 +56,7 @@
           <label for='card'><b>Pay Using Card</b></label>
         </div>
     
-
+      </form>
     </section>
 
     <!--Do the appropriate action based on the switch selected

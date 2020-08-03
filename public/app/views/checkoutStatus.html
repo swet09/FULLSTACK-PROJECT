@@ -1,20 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <base href="/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Payment status</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.fa-check-circle-o{
-font-size:120px;
-color:green;
-}
+    <!-- Cascade Style Sheets -->
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/checkoutStatus.css">
+    
+    <!-- Bootstrap -->
 
-</style>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 </head>
-<body>
-  <i class="fa fa-check-circle-o"></i>
-  <h1>Order Placed SuccesFully.</h1>
+
+<body ng-app="userApp">
+   <!-- Collect the nav links, forms, and other content for toggling -->
+   <div class="container">
+	
+	  <nav class="navbar navbar-expand-lg navbar-light">
+
+      <div>  
+      <a class="navbar-brand" href="#">La Taco</a>
+    </div>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto topnav">
+                
+            <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="app/views/menu.html">Menu <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="app/views/order.html">Order</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="app/views/hireMe.html">Hire Me</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="app/views/about.html">About Us</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="app/views/contact.html">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link btn text-white" type="button" href="app/views/login.html">Sign In</a>                  
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link btn text-white" type="button" href="app/views/register.html">Register</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+      
+</div>
+
+  
+    <div class="wrap">
+
+      <svg  width="150" height="150" viewBox="0 0 100 100">
+        <g id="1" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1.000000, -1.000000)">
+        <g id="group" transform="translate(3.000000, 3.000000)" stroke-width="3">
+        <circle id="mycircle" cx="50" cy="50" r="40" stroke="#364F6B" stroke-width="5" fill="white" />
+          <polyline id="mycheck" points="20,50,40 70,75 35,10" style="fill:none;stroke:green;stroke-width:5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          </g>
+          Sorry, your browser does not support inline SVG.
+      </svg>
+
+    </div>
+  
+  <div class="wrap-next" id="statement">
+  <h1 class="statement">Order Placed SuccesFully.</h1>
+  </div>  
+
+  <h1>Order summary</h1>
+
 </body>
+
 </html>

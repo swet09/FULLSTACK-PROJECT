@@ -12,14 +12,14 @@
 
   <!--Java Script Files-->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="asserts/js/checkout.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./assets/js/checkout.js"></script>
 
 </head>
 
 <body ng-app="">
-
+  
   <!--Header Logo-->
 
   <header class="user__header">
@@ -66,10 +66,11 @@
  
             <div class="select-option">  
             
-              <form action="/checkout/pickup/payment_method" method="POST" class="in-line">
+              <form action="/checkout/pickup/payment_method" method="POST" class="in-line" onsubmit="return confirmTime()">
                 
                 <label class="select-label" for='select-time'><b>Select Your PickUp Time.</b></label>&nbsp&nbsp
-                <select class="select-time" name="select-time" id="select-time">
+                <select class="select-time" name="select-time" id="select-time" required>
+                  <option value="">Select Time</option>
                   <option value="Now">Now</option>
                   <option value="10:00AM">10:00 AM</option>
                   <option value="10:30AM">10:30 AM</option>
@@ -79,8 +80,8 @@
                   <option value="12:30PM">12:30 PM</option>
                   <option value="01:00PM">01:00 PM</option>
                   <option value="01:30PM">01:30 PM</option>
-                  <option value="05:00PM">05:00 AM</option>
-                  <option value="05:30PM">05:30 AM</option>
+                  <option value="05:00PM">05:00 PM</option>
+                  <option value="05:30PM">05:30 PM</option>
                   <option value="06:00PM">06:00 PM</option>
                   <option value="16:30PM">06:30 PM</option>
                   <option value="07:00PM">07:00 PM</option>
