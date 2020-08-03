@@ -4,6 +4,16 @@ body {
     color: #555;
    
   }
+
+
+  .spaceCreate{
+
+    max-width: 100%;
+    margin: auto;
+    padding-top: 225%;
+  
+  }
+
   img {
     float: left;
     width:  50px;
