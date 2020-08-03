@@ -17,6 +17,14 @@ a {
   box-sizing: border-box;
 }
 
+.spaceCreated{
+
+  max-width: 100%;
+  margin: auto;
+  padding-top: 8.6%;
+
+}
+
 .card {
   border: rgb(194, 194, 194) 1px solid;
   transition: 0.3s;
