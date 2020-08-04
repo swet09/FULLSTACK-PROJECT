@@ -17,6 +17,14 @@ const register = require(path.join(__dirname + '/public/controllers/userControll
 const hireRoute = require(path.join(__dirname +'/public/controllers/hireMeStatus'))
 const userlogin = require(path.join(__dirname + '/public/controllers/loginController'));
 
+const menu = require(path.join(__dirname + '/public/controllers/menu'));
+const order = require(path.join(__dirname + '/public/controllers/order'));
+const hireMe = require(path.join(__dirname + '/public/controllers/hireMe'));
+const about = require(path.join(__dirname + '/public/controllers/about'));
+const contact = require(path.join(__dirname + '/public/controllers/contact'));
+const login = require(path.join(__dirname + '/public/controllers/login'));
+const registerForm = require(path.join(__dirname + '/public/controllers/registerForm'));
+
 app.use(morgan('dev')); // Morgan Middleware
 app.use(bodyParser.json()); // Body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true })); // For parsing application/x-www-form-urlencoded
@@ -29,7 +37,15 @@ app.use('/checkout/delivery/payment_method', deliveryPay);
 app.use('/checkout/status', checkoutStatus);
 app.use('/userRegister', register)
 app.use('/hireMeStatus', hireRoute);
-app.use('/userLogin', userlogin)
+app.use('/userLogin', userlogin);
+
+app.use('/menu', menu);
+app.use('/order', order);
+app.use('/hireMe', hireMe);
+app.use('/about', about);
+app.use('/contact', contact);
+app.use('/login', login);
+app.use('/register', registerForm);
 
 app.use(bodyParser.urlencoded({
   extended: true

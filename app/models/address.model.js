@@ -10,9 +10,9 @@ var addressSchema = new mongoose.Schema({
 
   /** this will be imported from users schema*/
   
-  // name: {
-  //   type: String
-  // },
+  name: {
+    type: String
+  },
 
   /** Below three will be imported from the cod form in checkout.html */
 
