@@ -14,7 +14,7 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 2px;
   margin: 0 auto;
-  background: #212121;
+  background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
 }
 .card{
   position: relative;

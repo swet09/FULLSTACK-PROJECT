@@ -30,7 +30,7 @@ const User = mongoose.model('user');
         return res.status(404).send();
       }
       else{
-        res.sendFile(path.join(__dirname, '..', 'app', 'views', 'index.html'));
+        res.sendFile(path.join(__dirname, '..', 'app', 'views', 'order.html'));
         //return res.status(200).send();
       }
       
