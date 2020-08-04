@@ -3,6 +3,7 @@
 }
 
 
+
 .navbar {
     background-color: #fff;
     border: 1px solid #dedede;
@@ -18,9 +19,12 @@
 }
 
 a.navbar-brand {
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bold;
     font-style: italic;
+    color: purple !important;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
 }
 
 .container {
@@ -44,6 +48,35 @@ a.navbar-brand {
     padding-right: 20px;
     padding-left:20px;
 }
+
+.intro-text{
+    font-style: italic;
+    
+   
+}
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 35px;
+    color: purple;
+  }
+  
+  /* Center align the text within the three columns below the carousel */
+  .marketing .col-lg-4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .marketing h2 {
+    font-weight: normal;
+  }
+  .marketing .col-lg-4 p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  
 
 
 
