@@ -1,19 +1,11 @@
 angular.module('mainController', ['authServices'])
 
-.controller('mainCtrl',function(Auth, $timeout, $location){
+.controller('mainCtrl',function(Auth, $timeout, $location,$rootScope){
     console.log('main controller');
 
     var app = this;
 
-    this.doLogin = function(loginData) {
-        app.loading = true;
-        app.errorMsg=false;
-        app.successMsg=false;
-        app.loadme = false;
-       // console.log(app.loginData);
-
-
-        // Check if user's session has expired upon opening page for the first time
+    $rootScope.$on('$routeChangeStart',function(){
         if (Auth.isLoggedIn()) {
             Auth.getUser().then(function(data) {
                 //console.log(data)
@@ -22,7 +14,7 @@ angular.module('mainController', ['authServices'])
                     Auth.logout(); // Log the user out
                     app.isLoggedIn = false; // Set session to false
                     $location.path('/'); // Redirect to home page
-                    app.loadme = true; // Allow loading of page
+                    app.loadme = false; // Allow loading of page
                 }else
                 {
                     app.isLoggedIn = true;
@@ -30,6 +22,19 @@ angular.module('mainController', ['authServices'])
                 }
             });
         }
+        else
+        {
+            console.log('not logged in');
+        }
+
+    });
+
+    this.doLogin = function(loginData) {
+        app.loading = true;
+        app.errorMsg=false;
+        app.successMsg=false;
+        app.loadme = false;
+       // console.log(app.loginData);
 
 
 

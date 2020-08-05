@@ -47,7 +47,7 @@ router.post('/users',function(req,res){
             var email = {
                 from:  'fullstackprojectpdx@gmail.com',
                 to: user.email, 
-                subject: 'Your Activation Link',
+                subject: 'Welcome to La Taco',
                 text: 'Hello ' + user.name + ', thank you for registering at La Taco.',
                 html: '<h1>Welcome :)</h1></br>Hello<strong> ' + user.username + '</strong>,<br><br>Thank you for registering at localhost.com.'
             };
