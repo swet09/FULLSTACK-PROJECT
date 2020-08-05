@@ -48,8 +48,8 @@ router.post('/users',function(req,res){
                 from:  'fullstackprojectpdx@gmail.com',
                 to: user.email, 
                 subject: 'Your Activation Link',
-                text: 'Hello ' + user.name + ', thank you for registering at La Taco. Please click on the following link to complete your activation: http://localhost:8080/activate/' + user.temporarytoken,
-                html: '<h1>Welcome :)</h1></br>Hello<strong> ' + user.username + '</strong>,<br><br>Thank you for registering at localhost.com. Please click on the link below to complete your activation:<br><br><a href="http://localhost:8080/activate/' + user.temporarytoken + '">http://localhost:8080/activate/</a>'
+                text: 'Hello ' + user.name + ', thank you for registering at La Taco.',
+                html: '<h1>Welcome :)</h1></br>Hello<strong> ' + user.username + '</strong>,<br><br>Thank you for registering at localhost.com.'
             };
             client.sendMail(email, function(err, info) {
                 if (err) {
@@ -59,38 +59,76 @@ router.post('/users',function(req,res){
                     console.log(user.email); 
                 }
             });
-            res.json({ success: true, message: 'Account registered! Please check your e-mail for activation link.' });
+            res.json({ success: true, message: 'User registered Successfully' });
         }
     });
 }
 });
   
 router.post('/authenticate', function(req, res) {
-  var loginUser = (req.body.username).toLowerCase();
-  User.findOne({ username: loginUser }).select('email username password active').exec(function(err, user) {
+    if(req.body.username == null || req.body.username == ''||req.body.password == null || req.body.password == ''){
+
+        res.json({success: false, message: 'Ensure username and password were provided'});
+    }
+    else
+    {
+      var loginUser = (req.body.username).toLowerCase(); // Ensure username is checked in lowercase against database
+      User.findOne({ username: loginUser }).select('email username password').exec(function(err, user) {
       if (err) {
-          res.json({ success: false, message: 'Something went wrong.' });
-      } else {          
-          if (!user) {
-              res.json({ success: false, message: 'Username not found' }); 
-          } else if (user) {
-              if (!req.body.password) {
-                  res.json({ success: false, message: 'No password provided' }); 
-              } else {
-                  var validPassword = user.comparePassword(req.body.password);
-                  if (!validPassword) {
-                      res.json({ success: false, message: 'Password does not match' });
-                  } else if (!user.active) {
-                      res.json({ success: false, message: 'Account is not yet activated. Please check your e-mail for activation link.', expired: true });  
-                  } else {
-                      var token = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '24h' });
-                      res.json({ success: true, message: 'User authenticated!', token: token }); 
-                  }
-              }
-          }
+         
+        res.json({ success: false, message: 'Something went wrong. This error has been logged and will be addressed by our staff. We apologize for this inconvenience!' });
       }
-  });
+      else
+      {
+        if (!user) {
+            res.json({ success: false, message: 'Username not found' }); // Username not found in database
+        } 
+        else if (user){
+            if (!req.body.password) {
+                res.json({ success: false, message: 'No password provided' }); // Password was not provided
+            } 
+            else
+            {
+                if (user.password!==req.body.password) {
+                    res.json({ success: false, message: 'Could not authenticate password' }); // Password does not match password in database
+                } else {
+                  var token = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '24h' }); // Logged in: Give user token
+                  res.json({ success: true, message: 'User authenticated!',token:token}); // Return token in JSON object to controller
+                }
+            }
+        }
+      }
+
+    })
+    }
+
 });
+
+    // Middleware for Routes that checks for token - Place all routes after this route that require the user to already be logged in
+    router.use(function(req, res, next) {
+        var token = req.body.token || req.body.query || req.headers['x-access-token']; // Check for token in body, URL, or headers
+
+        // Check if token is valid and not expired  
+        if (token) {
+            // Function to verify token
+            jwt.verify(token, secret, function(err, decoded) {
+                if (err) {
+                    res.json({ success: false, message: 'Token invalid' }); // Token has expired or is invalid
+                } else {
+                    req.decoded = decoded; // Assign to req. variable to be able to use it in next() route ('/me' route)
+                    next(); // Required to leave middleware
+                }
+            });
+        } else {
+            res.json({ success: false, message: 'No token provided' }); // Return error if no token was provided in the request
+        }
+    });
+
+    // Route to get the currently logged in user    
+    router.post('/me', function(req, res) {
+        res.send(req.decoded); // Return the token acquired from middleware
+    });
+
 
 
 return router;

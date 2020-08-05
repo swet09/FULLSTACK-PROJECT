@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
   var userSchema = new Schema({
       username : {type:String, lowercase:true, required:true, unique:true},    
       email : {type:String, lowercase:true, required:true, unique:true},
-      password :{type:String, lowercase:true, required:true}
+      password :{type:String, required:true}
   });
 
   // Method to compare passwords in API (when user logs in) 
