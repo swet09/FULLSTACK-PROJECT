@@ -55,24 +55,44 @@
                     <li class="hidden active">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="">
+                    <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    <li class="ngnav nav1">
                         <a class="page-scroll" href="/">Home</a>
                     </li>
-                    <li class="">
-                        <a  class="page-scroll" href="/login">Login</a>
+
+                    <li class="ngnav nav1">
+                        <a class="page-scroll" href="/menu">Menu</a>
                     </li>
-                    <li class="">
-                        <a  class="page-scroll" href="/register">Register</a>
+
+                    <li class="ngnav nav1">
+                        <a class="page-scroll" href="/hireMe">Hire Me</a>
                     </li>
-                    <li class="">
-                        <a  class="page-scroll" href="#">Logout</a>
+
+                    <li class="ngnav nav2">
+                        <a ng-show="!main.isLoggedIn" class="page-scroll" href="/login">Login</a>
                     </li>
-                    <li class="">
-                        <a  class="page-scroll" href="/about">About</a>
+
+                    <li class="ngnav nav2">
+                        <a ng-show="!main.isLoggedIn" class="page-scroll" href="/register">Register</a>
                     </li>
-                    
-                    <li class="">
-                        <a class="page-scroll" href="/profile">Hello {{ main.username }}</a>
+
+                    <li class="ngnav nav2">
+                        <a ng-show="main.isLoggedIn && main.authorized" class="page-scroll" href="/placeOrder">Order</a>
+                    </li>
+
+                    <li class="ngnav nav2">
+                        <a ng-show="main.isLoggedIn" class="page-scroll" href="#" ng-click="main.logout();">Logout</a>
+                    </li>
+
+                    <li class="ngnav nav1">
+                        <a class="page-scroll" href="/about">About Us</a>
+                    </li>
+            
+                    <li class="ngnav nav2">
+                        <a ng-show="main.isLoggedIn" class="page-scroll" href="/profile">Hello {{ main.username }}</a>
                     </li>
                 </ul>
             </div>
