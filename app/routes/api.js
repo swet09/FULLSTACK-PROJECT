@@ -47,8 +47,7 @@ router.post('/users',function(req,res){
           if (!req.body.password) {
               res.json({ success: false, message: 'No password provided' }); // Password was not provided
           } else {
-            var validPassword = user.comparePassword(req.body.password); // Check if password matches password provided by user 
-            if (!validPassword) {
+            if (user.password!==req.body.password) {
                 res.json({ success: false, message: 'Could not authenticate password' }); // Password does not match password in database
             } else {
               //var token = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '24h' }); // Logged in: Give user token
