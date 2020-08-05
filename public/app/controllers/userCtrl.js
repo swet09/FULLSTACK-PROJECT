@@ -6,9 +6,10 @@ angular.module('userController', ['userServices'])
 
     this.regUser = function(regData) {
         app.loading = true;
-        //app.errorMsg=false;
+        app.errorMsg=false;
         //console.log('form submitted');
-        $http.post('/api/users', this.regData).then(function(data){
+
+        User.create(app.regData).then(function(data){
             //console.log(data.data.success);
            // console.log(data.data.message);
             if(data.data.success){

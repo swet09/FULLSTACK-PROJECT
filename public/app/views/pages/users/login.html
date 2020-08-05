@@ -1,0 +1,28 @@
+<div class="page-header">
+    <h2>User Login</h2>
+    </div>
+    <br>
+    
+    <div class="jumbotron text-center" ng-show="register.loading">
+    <p>Loading</p>
+    </div>
+    
+    <div class="row show-hide-message" ng-show ="register.successMsg">
+        <div class="alert alert-success">{{register.successMsg}}</div>
+    </div>
+    <br>
+    <div class="row show-hide-message" ng-show ="register.errorMsg">
+        <div class="alert alert-danger">{{register.errorMsg}}</div>
+    </div>
+    
+    <div>
+        <form ng-submit="register.regUser(regData);">
+            <label>Username </label>
+            <input class="form-control" type="text" name="username" ng-model = "register.regData.username">
+            <br>
+            <label>Password </label>
+            <input class="form-control" type="password" name="password" ng-model = "register.regData.password">
+            <br>
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+    </div>

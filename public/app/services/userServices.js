@@ -11,4 +11,3 @@ angular.module('userServices',[])
     return userFactory;
 
 })
-console.log('User Services')

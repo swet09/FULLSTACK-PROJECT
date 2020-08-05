@@ -19,8 +19,10 @@
     <script src="app/routes.js"></script>
 
     <script src="app/controllers/userCtrl.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
 
     <script src="app/services/userServices.js"></script>
+    <script src="app/services/authServices.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Cascade Style Sheets -->
@@ -32,7 +34,7 @@
 
 </head>
 
-<body ng-app="userApp">
+<body ng-app="userApp" ng-controller="mainCtrl as main">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
