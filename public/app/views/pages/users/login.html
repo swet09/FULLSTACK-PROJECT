@@ -3,20 +3,20 @@
     </div>
     <br>
     
-    <div class="jumbotron text-center" ng-show="register.loading">
+    <div class="jumbotron text-center" ng-show="main.loading">
     <p>Loading</p>
     </div>
     
-    <div class="row show-hide-message" ng-show ="register.successMsg">
-        <div class="alert alert-success">{{register.successMsg}}</div>
+    <div class="row show-hide-message" ng-show ="main.successMsg">
+        <div class="alert alert-success">{{main.successMsg}}</div>
     </div>
     <br>
-    <div class="row show-hide-message" ng-show ="register.errorMsg">
-        <div class="alert alert-danger">{{register.errorMsg}}</div>
+    <div class="row show-hide-message" ng-show ="main.errorMsg">
+        <div class="alert alert-danger">{{main.errorMsg}}</div>
     </div>
     
     <div>
-        <form ng-submit="register.regUser(regData);">
+        <form ng-submit="main.doLogin(loginData)">
             <label>Username </label>
             <input class="form-control" type="text" name="username" ng-model = "register.regData.username">
             <br>
