@@ -1,0 +1,55 @@
+<div class="Page header">
+
+  <section class="card__grid">
+       
+    <div class="row">
+
+        <div class="col-md-6 offset-md-3" class="form">
+
+      <form ng-submit="main.checkStatus(checkData);" autocomplete="off" class="cardPay-form">
+
+            <h3 class="heading">Complete Yor Payment</h3>
+            <img class="img-fluid cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+            
+          <div class="form-group">
+              <label for="cc-number" class="control-label mb-1">Card Number</label>
+              <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" placeholder="card number" required>
+              <!-- <span class="invalid-feedback">Enter a valid 12 to 16 digit card number</span> -->
+          </div>
+
+            <div class="row">
+
+              <div class="col-6">
+                  <div class="form-group">
+                      <label for="exp-date" class="control-label mb-1">Expiration</label>
+                      <input id="exp-date" name="exp-date" type="tel" class="form-control exp-date" required placeholder="MM / YY">
+                      <!-- <span class="invalid-feedback">Enter the expiration date</span> -->
+                  </div>
+              </div>
+
+              <div class="col-6">
+                <label for="cvv" class="control-label mb-1">CVV</label>
+                <div class="input-group">
+                    <input id="cvv" name="cvv" type="tel" class="form-control cc-cvc" placeholder="cvv" required>
+                    <!-- <span class="invalid-feedback order-last">Enter the 3-digit code on back</span> -->
+                
+                </div>
+            </div>
+
+           </div>
+            
+           <div class="form-group">
+            <label for="cc-name" class="control-label mb-1">Name On Card</label>
+            <input id="cc-name" name="cc-name" type="text" class="form-control" placeholder="card owner name">
+            <!-- <span class="help-block" data-valmsg-for="x_zip" data-valmsg-replace="true"></span> -->
+        </div>
+        
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" class="mak_pay"><i class="fa fa-credit-card"></i> Make Payment</button>
+            </div>
+        </form>
+  
+
+</section>
+
+  </div>

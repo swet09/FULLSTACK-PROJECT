@@ -65,6 +65,15 @@ angular.module('mainController', ['authServices'])
             $location.path('/')
         },2000);
     }
-    
-        
+
+    this.doPay = function(payData){
+        console.log("inside doPay method");  
+        $location.path('/payment');   
+    }
+
+    this.checkStatus = function(){
+        console.log("inside checkStatus method");  
+        $location.path('/paymentStatus');
+    }
+     
 });

@@ -39,9 +39,21 @@ angular.module('appRoutes',['ngRoute'])
     })
 
     .when('/placeOrder',{
-        templateUrl: 'app/views/pages/placeOrder.html'
-        // controller: 'cartCtrl',
-        // controllerAs: 'cart'
+        templateUrl: 'app/views/pages/placeOrder.html',
+        controller: 'cartCtrl',
+        controllerAs: 'cart'
+    })
+
+    .when('/checkout',{
+        templateUrl: 'app/views/pages/checkout.html'
+    })
+
+    .when('/payment',{
+        templateUrl: 'app/views/pages/checkoutPayment.html'
+    })
+
+   .when('/paymentStatus',{
+        templateUrl: 'app/views/pages/checkoutStatus.html'
     })
 
     .when('/login',{

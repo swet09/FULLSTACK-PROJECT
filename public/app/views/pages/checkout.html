@@ -1,0 +1,111 @@
+<div class="Page header">
+
+  <!--A grid container to hold the checkout options provider form. 1. PickUp 2. Delivery-->
+  
+    <section class="grid-container" >
+  
+      <div class="heading" ><h4>How do you want to get your Meal?</h4></div>
+      
+      <!--1st option = pick up-->  
+  
+        <div class="radio Button1">
+          <input ng-model="selection" type="radio" id='pickUp' name='checkOutOption' value="Pick Up">
+          <label for='pickUp'><b>Pick Up From Store.</b></label>
+        </div>
+  
+      <!--2nd option = Delivery--> 
+  
+        <div class="radio Button2">
+          <input ng-model="selection" type="radio" id='Delivery' name='checkOutOption' value="Delivery">
+          <label for='Delivery'><b>Deliver To Your Home?</b></label>
+        </div>
+  
+    </section>
+  
+    <!--Do the appropriate action based on the switch selected
+    There will be 2 option switches, below are their forms
+    1. pick up option
+    2. Delivary option-->
+  
+    <div ng-switch="selection" class="animate-switch-container">
+  
+      <!--1st switch = pich Up switch-->
+  
+      <div ng-switch-when="Pick Up" class="pu">
+  
+        <section class="pickup-grid-container">
+  
+          <div class="puheading" ><h4>Pick Up Time?</h4></div>
+  
+            <div class="select-option">  
+            
+              <form ng-submit="main.doPay(payData);">
+                
+                <label class="select-label" for='select-time'><b>Select Your PickUp Time.</b></label>&nbsp&nbsp
+                <select class="select-time" name="select-time" id="select-time" ng-model = "main.payData.time" required>
+                  <option value="">Select Time</option>
+                  <option value="Now">Now</option>
+                  <option value="10:00AM">10:00 AM</option>
+                  <option value="10:30AM">10:30 AM</option>
+                  <option value="11:00AM">11:00 AM</option>
+                  <option value="11:30AM">11:30 AM</option>
+                  <option value="12:00PM">12:00 PM</option>
+                  <option value="12:30PM">12:30 PM</option>
+                  <option value="01:00PM">01:00 PM</option>
+                  <option value="01:30PM">01:30 PM</option>
+                  <option value="05:00PM">05:00 PM</option>
+                  <option value="05:30PM">05:30 PM</option>
+                  <option value="06:00PM">06:00 PM</option>
+                  <option value="16:30PM">06:30 PM</option>
+                  <option value="07:00PM">07:00 PM</option>
+                  <option value="07:30PM">07:30 PM</option>
+                </select></br></br>
+            
+                <button id="select-ok" class="select-ok" class=" btn btn-primary mb-2" type="submit" >Proceed</button>
+             
+              </form>
+            
+            </div>
+          
+        </section>
+  
+      </div>
+  
+      <!--2nd switch = Delivery switch-->
+      
+      <div ng-switch-when="Delivery" class="animate-switch">
+  
+        <!--2nd option = Delivery option form--> 
+        
+        <section class="Delivery__grid">
+  
+          <form ng-submit="main.doPay(payData);">
+           
+            <div class="codheading" ><h2>Delivary Address</h2></div> 
+  
+             <div class="form-group">
+               <input type="text" placeholder="Address Line 1" name="addressLine1" class="form__input" id="Addr1" ng-model = "main.payData.addr1" required/>
+              </div>
+  
+              <div class="form-group">
+                <input type="text" placeholder="Address Line 2" name="addressLine2" class="form__input" id="Addr2" ng-model = "main.payData.addr2" required/>
+               </div>
+  
+               <div class="form-group">
+                <input type="number" placeholder="Phone Number" name="phoneNumber" class="form__input" id="pno" ng-model = "main.payData.phno" required/>
+               </div>
+      
+             <div class = "btn btn-toolbar" id="buttons">
+               <button id="submit" class=" btn btn-primary mb-2" type="submit" >Submit</button>
+               <button id="reset" class=" btn btn-secondary mb-2" type="reset" >Reset</button>
+             </div> 
+  
+          </form>
+  
+        </section>
+  
+      </div>
+  
+    </div>
+  
+  </div>
