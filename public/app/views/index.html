@@ -58,6 +58,10 @@
                     <li class="hidden active">
                         <a href="#page-top"></a>
                     </li>
+                    
+                    <li class="ngnav nav2">
+                        <a ng-show="main.isLoggedIn" class="page-scroll" href="/profile">Hello {{ main.username }}</a>
+                    </li>
 
                     <li class="ngnav nav1">
                         <a class="page-scroll" href="/">Home</a>
@@ -65,6 +69,10 @@
 
                     <li class="ngnav nav1">
                         <a class="page-scroll" href="/menu">Menu</a>
+                    </li>
+
+                    <li class="ngnav nav2">
+                        <a ng-show="main.isLoggedIn" class="page-scroll" href="/placeOrder">Order</a>
                     </li>
 
                     <li class="ngnav nav1">
@@ -79,21 +87,20 @@
                         <a ng-show="!main.isLoggedIn" class="page-scroll" href="/register">Register</a>
                     </li>
 
-                    <li class="ngnav nav2">
-                        <a ng-show="main.isLoggedIn" class="page-scroll" href="/placeOrder">Order</a>
-                    </li>
-
-                    <li class="ngnav nav2">
-                        <a ng-show="main.isLoggedIn" class="page-scroll" href="#" ng-click="main.logout();">Logout</a>
-                    </li>
+                    
 
                     <li class="ngnav nav1">
                         <a class="page-scroll" href="/about">About Us</a>
                     </li>
-            
-                    <li class="ngnav nav2">
-                        <a ng-show="main.isLoggedIn" class="page-scroll" href="/profile">Hello {{ main.username }}</a>
+
+                    <li class="ngnav nav1">
+                        <a class="page-scroll" href="/contact">Contact Us</a>
                     </li>
+                    
+                    <li class="ngnav nav2">
+                        <a ng-show="main.isLoggedIn" class="page-scroll" href="#" ng-click="main.logout();">Logout</a>
+                    </li>
+                    
                 </ul>
             </div>
 

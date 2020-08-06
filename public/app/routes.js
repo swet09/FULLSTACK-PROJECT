@@ -12,6 +12,10 @@ angular.module('appRoutes',['ngRoute'])
         templateUrl: 'app/views/pages/about.html'
     })
 
+    .when('/contact',{
+        templateUrl: 'app/views/pages/contact.html'
+    })
+
     .when('/register',{
         templateUrl: 'app/views/pages/users/register.html',
         controller: 'regCtrl',
