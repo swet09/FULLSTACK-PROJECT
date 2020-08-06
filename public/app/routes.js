@@ -38,6 +38,12 @@ angular.module('appRoutes',['ngRoute'])
         controllerAs: 'register'
     })
 
+    .when('/placeOrder',{
+        templateUrl: 'app/views/pages/placeOrder.html'
+        // controller: 'cartCtrl',
+        // controllerAs: 'cart'
+    })
+
     .when('/login',{
         templateUrl: 'app/views/pages/users/login.html'
     })
