@@ -1273,7 +1273,6 @@ a.navbar-brand {
     height: 50px;
     width: 400px;
     overflow: hidden;
-    transition: all .2s ease-in-out;
     color: white;
   }
   

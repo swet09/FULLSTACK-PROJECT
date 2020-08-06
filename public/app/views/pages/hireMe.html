@@ -1,0 +1,93 @@
+<section id="contact">
+  
+  <h2 class="section-header">Submit your information to work with us</h1>
+  
+  <div class="contact-wrapper">
+    
+      <!---------------- 
+
+      CONTACT PAGE LEFT 
+    
+      -----------------> 
+    
+    <form class="form-horizontal" role="form">
+       
+      <div class="form-group">
+        <div class="col-sm-12">    
+          <input type="text" class="form-control" id="name" placeholder=" ENTER YOUR NAME" name="name" value="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="ENTER YOUR EMAIL" name="email" value="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="phone" class="form-control" id="email" name="phone" placeholder="XXX-XXX-XXXX (MOBILE NUMBER)" required/>
+        </div>
+      </div>
+
+      <textarea class="form-control" rows="5" placeholder="ENTER YOUR ADDRESS" name="streetAddress"></textarea>
+      
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <div class="button">
+          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+        </div>
+      
+      </button>
+      
+    </form>
+
+    <div class="direct-contact-container">
+      <ul class="contact-list">
+      <div class="item">
+        <label for="bdate">Date of Birth<span>*</span></label>
+            <input id="bdate" type="date" name="bdate" required/>
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+      <br>
+      <br>
+      <div class="item">
+        <label>Please select Your Preferred Shift</label>
+        <div >
+            <select class="dropdown" required>
+                <option selected value="" disabled selected></option>
+                <option value="course-type" >7AM - 11AM</option>
+                <option value="short-courses">11AM - 3PM</option>
+                <option value="featured-courses">3PM - 8PM</option>
+                <option value="undergraduate">8PM - 11PM</option>
+            </select>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <textarea class="form-control" rows="5" placeholder="Tell Us about Yourself" name="urself"></textarea>
+
+      <br>
+      <br>
+
+      <div class="question">
+        <label>Preferred Type of Contact <span>::</span></label>
+        <div class="question-answer">
+          <div>
+            <input type="radio" value="none" id="radio_1" name="contact"/>
+            <label for="radio_1" class="radio"><span>Mail</span></label>
+          </div>
+          <div>
+            <input  type="radio" value="none" id="radio_2" name="contact"/>
+            <label for="radio_2" class="radio"><span>Phone</span></label>
+          </div>
+        </div>
+      </div>
+
+    </ul>
+
+    </div>
+    
+  </div>
+  
+</section>  
