@@ -1034,7 +1034,7 @@ header .intro-text .intro-heading {
 }
 
 a.navbar-brand {
-    font-size: xx-large;
+    font-size: 100px;
     font-weight: bold;
     font-style: italic;
     color: purple !important;
@@ -1236,7 +1236,7 @@ a.navbar-brand {
     margin: 0 auto;
     padding-top: 50px;
     margin-bottom: 50px;
-    font: 300 60px 'Oswald', sans-serif;
+    font-size: x-large;
     letter-spacing: 6px;
     color: black;
     margin-bottom: 25px;
@@ -1490,3 +1490,21 @@ a.navbar-brand {
       width: 99%;
     }
   }
+
+
+  .question{
+    display: flex;
+  }
+  .question-answer label {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .dropdown{
+        width:200px;   
+    }
+
+    .drinksMenu{
+        background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+    }
+  

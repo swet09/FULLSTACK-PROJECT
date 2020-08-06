@@ -3,6 +3,10 @@
         <div class="intro-text">            
           <div class="intro-heading">La Taco</div>
           <div class="intro-lead-in">I Taco You</div>
+          <br>
+          <br>
+          <p ng-show="!main.isLoggedIn" style="font-size: large;">Please login to start ordering</p>
+          <a ng-show="!main.isLoggedIn" class="page-scroll" href="/login" style="font-size: x-large;">Click Here to login</a>
         </div>
     </div>
 </header>

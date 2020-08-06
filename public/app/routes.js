@@ -12,6 +12,22 @@ angular.module('appRoutes',['ngRoute'])
         templateUrl: 'app/views/pages/about.html'
     })
 
+    .when('/menu',{
+        templateUrl: 'app/views/pages/menu.html'
+    })
+
+    .when('/hireMe',{
+        templateUrl: 'app/views/pages/hireMe.html'
+    })
+
+    .when('/drinks',{
+        templateUrl: 'app/views/pages/drinks.html'
+    })
+
+    .when('/tacos',{
+        templateUrl: 'app/views/pages/tacos.html'
+    })
+
     .when('/contact',{
         templateUrl: 'app/views/pages/contact.html'
     })
