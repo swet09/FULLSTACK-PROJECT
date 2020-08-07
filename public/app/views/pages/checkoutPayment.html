@@ -1,97 +1,72 @@
 <div class="Page header">
-<!-- 
-  <section class="c_main card__grid">
-       
-        <form ng-submit="main.checkStatus(checkData);" autocomplete="off">
 
-        <div class="c_row c_body">
-          <div class="c_col-75">
-            <div class="c_container">
-              <form action="">
-              
-                <div class="c_row">
+  <div class="cc_body">
+
+    <div class="cc_container">
+
+      <form ng-submit="main.checkStatus(checkData);" autocomplete="off">
+    
+        <div class="cc_row">
         
-                  <div class="c_col-50">
-                    <h3>Payment</h3>
-                    <label for="fname">Accepted Cards</label>
-                    <div class="c_icon-container">
-                      <i class="fa fa-cc-visa" style="color:navy;"></i>
-                      <i class="fa fa-cc-amex" style="color:blue;"></i>
-                      <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                      <i class="fa fa-cc-discover" style="color:orange;"></i>
-                    </div>
-                    <label for="cname">Name on Card</label>
-                    <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-                    <label for="ccnum">Credit card number</label>
-                    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                    <label for="expmonth">Exp Month</label>
-                    <input type="text" id="expmonth" name="expmonth" placeholder="September">
-                    <div class="c_row">
-                      <div class="c_col-50">
-                        <label for="expyear">Exp Year</label>
-                        <input type="text" id="expyear" name="expyear" placeholder="2018">
-                      </div>
-                      <div class="c_col-50">
-                        <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" name="cvv" placeholder="352">
-                      </div>
-                    </div>
-                  </div>
-                  
+          <div class="cc_col-50">
+            
+            <h3>Complete the Payment to Proceed</h3>
+
+              <label class="cc_label" for="fname">Accepted Cards</label>
+
+                <div class="cc_icon-container">
+                  <i class="fa fa-cc-visa" style="color:navy;"></i>
+                  <i class="fa fa-cc-amex" style="color:blue;"></i>
+                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                  <i class="fa fa-cc-discover" style="color:orange;"></i>
                 </div>
-                <label>
-                  <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-                </label>
-                <input type="submit" value="Continue to checkout" class="c_btn">
-              </form>
-            </div>
+
+              <label class="cc_label" for="cname">Name on Card</label>
+              <input class="cc_in_text" type="text" id="cname" name="cardname" placeholder="Name On Card">
+
+              <label class="cc_label" for="ccnum">Credit card number</label>
+              <input class="cc_in_text" type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+
+              <label class="cc_label" for="expmonth">Exp Month</label>
+              <select class="cc_in_text" id="expmonth" name="expmonth">
+                <option value="01">January</option>
+                <option value="02">February </option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+
+              <div class="cc_row">
+                <div class="cc_col-50">
+                  <label class="cc_label" for="expyear">Exp Year</label>
+                  <select class="cc_in_text" id="expyear" name="expyear">
+                    <option value="2020"> 2020</option>
+                    <option value="2021"> 2021</option>
+                    <option value="2022"> 2022</option>
+                    <option value="2023"> 2023</option>
+                    <option value="2024"> 2024</option>
+                    <option value="2025"> 2025</option>
+                </select>
+                </div>
+                <div class="cc_col-50">
+                  <label class="cc_label" for="cvv">CVV</label>
+                  <input class="cc_in_text" type="text" id="cvv" name="cvv" placeholder="352">
+                </div>
+              </div>
           </div>
           
         </div>
-  
-</form>
-</section> -->
-
-<div class="cc_body">
-<div class="cc_container">
-
-  <form ng-submit="main.checkStatus(checkData);" autocomplete="off">
-  
-    <div class="cc_row">
       
-
-      <div class="cc_col-50">
-        <h3>Complete the Payment to Proceed</h3>
-        <label class="cc_label" for="fname">Accepted Cards</label>
-        <div class="cc_icon-container">
-          <i class="fa fa-cc-visa" style="color:navy;"></i>
-          <i class="fa fa-cc-amex" style="color:blue;"></i>
-          <i class="fa fa-cc-mastercard" style="color:red;"></i>
-          <i class="fa fa-cc-discover" style="color:orange;"></i>
-        </div>
-        <label class="cc_label" for="cname">Name on Card</label>
-        <input class="cc_in_text" type="text" id="cname" name="cardname" placeholder="John More Doe">
-        <label class="cc_label" for="ccnum">Credit card number</label>
-        <input class="cc_in_text" type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-        <label class="cc_label" for="expmonth">Exp Month</label>
-        <input class="cc_in_text" type="text" id="expmonth" name="expmonth" placeholder="September">
-        <div class="cc_row">
-          <div class="cc_col-50">
-            <label class="cc_label" for="expyear">Exp Year</label>
-            <input class="cc_in_text" type="text" id="expyear" name="expyear" placeholder="2018">
-          </div>
-          <div class="cc_col-50">
-            <label class="cc_label" for="cvv">CVV</label>
-            <input class="cc_in_text" type="text" id="cvv" name="cvv" placeholder="352">
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    
-    <input class="cc_btn" type="submit" value="Make Payment" class="btn">
-  </form>
-</div>
-</div>
+        <input class="cc_btn" type="submit" value="Make Payment" class="btn">
+    </form>
+  </div>
+  </div>
 
   </div>
