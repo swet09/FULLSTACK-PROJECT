@@ -65,6 +65,11 @@ angular.module('appRoutes',['ngRoute'])
         templateUrl: 'app/views/pages/users/logout.html'
     })
 
+    
+    .when('/faq',{
+        templateUrl: 'app/views/pages/faq.html'
+    })
+
     .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode({ enabled: true, requireBase: false }); 

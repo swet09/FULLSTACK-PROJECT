@@ -1,7 +1,11 @@
+var regData ={
+    email:'',
+    username:'',
+    password:''
+};
 angular.module('userController', ['userServices'])
 
 .controller('regCtrl',function($http, $location, $timeout, User){
-
     var app = this;
 
     this.regUser = function(regData) {
@@ -12,7 +16,8 @@ angular.module('userController', ['userServices'])
         User.create(app.regData).then(function(data){
             //console.log(data.data.success);
            // console.log(data.data.message);
-            if(data.data.success){
+            if(data.data.success)
+            {
                 app.loading = false;
                 app.successMsg = data.data.message+"...Redirecting";
                 $timeout(function(){
@@ -20,10 +25,14 @@ angular.module('userController', ['userServices'])
                 },2000);
                 
             }
-            else{
+            else
+            {
                 app.loading = false;
                 app.errorMsg = data.data.message;
             }
         });
     }
+
+    app.regData =regData;
+
 });

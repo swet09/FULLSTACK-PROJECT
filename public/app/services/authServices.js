@@ -3,7 +3,8 @@ angular.module('authServices',[])
 .factory('Auth',function($http,AuthToken){
 
     authFactory={};
-   console.log('testing auth services');
+   
+    console.log('testing auth services');
 
     authFactory.login = function(loginData) {
         return $http.post('/api/authenticate', loginData).then(function(data) {
@@ -26,9 +27,12 @@ angular.module('authServices',[])
      // Function to get current user's data
     authFactory.getUser = function() {
         // Check first if user has a token
-        if (AuthToken.getToken()) {
+        if (AuthToken.getToken()) 
+        {
             return $http.post('/api/me'); // Return user's data
-        } else {
+        }
+         else 
+        {
             $q.reject({ message: 'User has no token' }); // Reject if no token exists
         }
     };
@@ -41,7 +45,6 @@ angular.module('authServices',[])
     return authFactory;
 
 })
-
 
 .factory('AuthToken', function($window) {
     var authTokenFactory = {}; 
@@ -68,11 +71,14 @@ angular.module('authServices',[])
 
     // Function to check for token in local storage and attach to header if so
     authInterceptorsFactory.request = function(config) {
+       
         var token = AuthToken.getToken(); // Check if a token is in local storage
+       
         if (token) config.headers['x-access-token'] = token; //If exists, attach to headers
 
         return config; // Return config object for use in app.js (config file)
     };
+
     return authInterceptorsFactory; // Return factory object
 
 });
