@@ -72,11 +72,22 @@ angular.module('appRoutes',['ngRoute'])
         templateUrl: 'app/views/pages/faq.html'
     })
 
-     
+    .when('/hiremeStatus',{
+        templateUrl: 'app/views/pages/hiremeStatus.html'
+    }) 
+
     .when('/contactStatus',{
         templateUrl: 'app/views/pages/contactStatus.html'
     })
+
+    .when('/privacy-policy',{
+        templateUrl: 'app/views/pages/privacyPolicy.html'
+    })
     
+    .when('/terms-of-use',{
+        templateUrl: 'app/views/pages/terms.html'
+    })
+
     .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode({ enabled: true, requireBase: false }); 

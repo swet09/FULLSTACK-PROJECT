@@ -12,6 +12,10 @@ angular.module('userServices',[])
         return $http.post('/api/sendMsg', formData);
     }
 
+    userFactory.hireMsg = function(formData){
+        return $http.post('/api/hireMsg', formData);
+    }
+
     return userFactory;
 
 });

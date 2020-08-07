@@ -16,11 +16,40 @@ angular.module('formController', ['userServices'])
         }
         else
         {
+            
             user.sendMsg(app.formData).then(function(data){
-                $location.path('/contactStatus');
-                $timeout(function(){
-                    $location.path('/')
-                },2000);
+                if(data.data.success){
+                    $location.path('/contactStatus');
+                    $timeout(function(){
+                        $location.path('/')
+                    },2000);
+                }
+                
+            });
+           
+        }
+        
+    }
+
+    this.hiremeMsg = function(hiremeData)
+    {
+        console.log(' hire me data '+JSON.stringify(hiremeData)+' '+app.hiremeData.name)
+        if(app.hiremeData.name==''|| app.hiremeData.name==null||app.hiremeData.email==''|| app.hiremeData.email==null||app.hiremeData.message==''|| app.hiremeData.message==null)
+        {
+            $timeout(function(){
+                app.errorMsg ="Please fill the below fields and send us your message."
+            },2000);
+        }
+        else
+        {
+            user.hireMsg(app.hiremeData).then(function(data){
+                if(data.data.success){
+                    $location.path('/hiremeStatus');
+                    $timeout(function(){
+                        $location.path('/')
+                    },2000);
+                }
+               
             });
            
         }

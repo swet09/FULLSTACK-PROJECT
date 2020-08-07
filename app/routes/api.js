@@ -130,24 +130,44 @@ router.post('/authenticate', function(req, res) {
     });
 
 
-
-router.post('/sendMsg', function(req,res){
-    var email = {
-        from:  'fullstackprojectpdx@gmail.com',
-        to: req.body.email, 
-        subject: 'Message Received La Taco',
-        text: 'Hello ' +  req.body.name + ', thank you for contacting us at La Taco.',
-        html: '<h1>Welcome :)</h1></br>Hello<strong> ' +  req.body.name + '</strong>,<br><br>We will get back to you with two business days. Thank You.'
-    };
-    client.sendMail(email, function(err, info) {
-        if (err) {
-            console.log("err--> ",err); 
-        } else {
-            console.log(info); 
-            console.log( req.body.email); 
-        }
+    router.post('/sendMsg', function(req,res){
+        var email = {
+            from:  'fullstackprojectpdx@gmail.com',
+            to: req.body.email, 
+            subject: 'Message Received La Taco',
+            text: 'Hello ' +  req.body.name + ', thank you for contacting us at La Taco.',
+            html: '<h1></br>Hello<strong></h1> ' +  req.body.name + '</strong>,<br><br>We will get back to you with two business days.<br><br> Have a nice day.'
+        };
+        client.sendMail(email, function(err, info) {
+            if (err) {
+                console.log("err--> ",err); 
+            } else {
+                console.log(info); 
+                console.log( req.body.email); 
+            }
+        });
+        res.json({ success: true});
     });
-});
+
+    router.post('/hireMsg', function(req,res){
+        var email = {
+            from:  'fullstackprojectpdx@gmail.com',
+            to: req.body.email, 
+            subject: 'Application Received La Taco',
+            text: 'Hello ' +  req.body.name + ', thank you for applying us at La Taco.',
+            html: '<h1>Hello<strong></h1></br> ' +  req.body.name + '</strong>,<br><br>We will process all applications and call you for interviews shortly. <br><br> Have a nice day.'
+        };
+        client.sendMail(email, function(err, info) {
+            if (err) {
+                console.log("err--> ",err); 
+            } else {
+                console.log(info); 
+                console.log( req.body.email); 
+            }
+        });
+        res.json({ success: true});
+    });
+
 
 
 return router;
