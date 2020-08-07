@@ -1302,16 +1302,16 @@ a.navbar-brand {
   
   /* Begin Right Contact Page */
   .direct-contact-container {
-    max-width: 400px;
+    width: 400px;
     float: right;
     margin-top: 5px;
   }
   
   /* Location, Phone, Email Section */
   .contact-list {
-    list-style-type: none;
-    margin-left: -30px;
-    padding-right: 20px;
+    list-style-type: none;  
+    padding-right: 0px;
+   
   }
   
   .list-item {
@@ -1497,6 +1497,7 @@ a.navbar-brand {
   .question-answer label {
     display: flex;
     flex-direction: column;
+   
     }
 
     .dropdown{
@@ -1506,4 +1507,16 @@ a.navbar-brand {
     .drinksMenu{
         background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
     }
-  
+
+    .shop-item-price{
+        font-size: large;
+    }
+    .shop-item-qty{
+        font-size: large;
+    }
+    .quantity{
+        font-size: large;
+    }
+    
+    
+    
