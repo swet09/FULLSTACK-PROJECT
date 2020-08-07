@@ -29,7 +29,9 @@ angular.module('appRoutes',['ngRoute'])
     })
 
     .when('/contact',{
-        templateUrl: 'app/views/pages/contact.html'
+        templateUrl: 'app/views/pages/contact.html',
+        controller: 'formCtrl',
+        controllerAs: 'form'
     })
 
     .when('/register',{
@@ -70,6 +72,11 @@ angular.module('appRoutes',['ngRoute'])
         templateUrl: 'app/views/pages/faq.html'
     })
 
+     
+    .when('/contactStatus',{
+        templateUrl: 'app/views/pages/contactStatus.html'
+    })
+    
     .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode({ enabled: true, requireBase: false }); 

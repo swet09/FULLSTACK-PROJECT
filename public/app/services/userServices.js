@@ -8,6 +8,10 @@ angular.module('userServices',[])
         return $http.post('/api/users', regData);
     }
 
+    userFactory.sendMsg = function(formData){
+        return $http.post('/api/sendMsg', formData);
+    }
+
     return userFactory;
 
 });

@@ -1,7 +1,10 @@
 <section id="contact">
   
     <h1 class="section-header">CONTACT US</h1>
-    
+
+    <div class="row show-hide-message" ng-show ="form.errorMsg">
+      <div class="alert alert-danger">{{form.errorMsg}}</div>
+  </div>
     <div class="contact-wrapper">
       
         <!---------------- 
@@ -10,23 +13,23 @@
       
         -----------------> 
       
-      <form class="form-horizontal" role="form">
+      <form class="form-horizontal">
          
         <div class="form-group">
           <div class="col-sm-12">
-            <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="">
+            <input type="text" class="form-control" placeholder="NAME" name="name" ng-model = "form.formData.name" required>
           </div>
         </div>
   
         <div class="form-group">
           <div class="col-sm-12">
-            <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="">
+            <input type="email" class="form-control" placeholder="EMAIL" name="email" ng-model = "form.formData.email"required>
           </div>
         </div>
   
-        <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
+        <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" ng-model = "form.formData.text"required></textarea>
         
-        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <button class="btn btn-primary send-button" ng-click="form.sendMsg(formData)">
           <div class="button">
             <span class="send-text">SEND</span>
           </div>
@@ -54,7 +57,7 @@
   
           <hr>
           <ul class="social-media-list">
-            <li><a href="#" target="_blank" class="contact-icon">
+            <li><a href="https://github.com/swet09/FULLSTACK-PROJECT/" target="_blank" class="contact-icon">
               <i class="fa fa-github" aria-hidden="true"></i></a>
             </li>
             <li><a href="#" target="_blank" class="contact-icon">

@@ -18,18 +18,23 @@
     <script src="app/app.js"></script>
     <script src="app/routes.js"></script>
 
+    <!-- Angular controllers -->
     <script src="app/controllers/userCtrl.js"></script>
     <script src="app/controllers/mainCtrl.js"></script>
     <script src="app/controllers/cartCtrl.js"></script>
+    <script src="app/controllers/formCtrl.js"></script>
 
+    <!-- Angular services -->
     <script src="app/services/userServices.js"></script>
     <script src="app/services/authServices.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Cascade Style Sheets -->
+    <!-- Style Sheets -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    
+    <!-- Custom Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <title>La Taco</title>
 
@@ -75,7 +80,7 @@
                     <li class="ngnav nav2">
                         <a ng-show="main.isLoggedIn" class="page-scroll" href="/placeOrder">Order</a>
                     </li>
-                    
+
                     <li class="ngnav nav2">
                         <a ng-show="!main.isLoggedIn" class="page-scroll" href="/login">Login</a>
                     </li>
