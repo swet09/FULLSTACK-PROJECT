@@ -14,10 +14,13 @@ angular.module('appRoutes',['ngRoute'])
 
     .when('/menu',{
         templateUrl: 'app/views/pages/menu.html'
+        
     })
 
     .when('/hireMe',{
-        templateUrl: 'app/views/pages/hireMe.html'
+        templateUrl: 'app/views/pages/hireMe.html',
+        controller: 'formCtrl',
+        controllerAs: 'form'
     })
 
     .when('/drinks',{
@@ -92,6 +95,12 @@ angular.module('appRoutes',['ngRoute'])
     .when('/sweets',{
         templateUrl: 'app/views/pages/sweets.html'
     })
+
+    
+    .when('/sides',{
+        templateUrl: 'app/views/pages/sides.html'
+    })
+
 
     .otherwise({ redirectTo: '/' });
 

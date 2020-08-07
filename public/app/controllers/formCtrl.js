@@ -7,17 +7,11 @@ angular.module('formController', ['userServices'])
     
     this.SendMsg = function(formData)
     {
-        console.log(' contact data '+JSON.stringify(formData)+' '+app.formData.name)
-        if(app.formData.name==''|| app.formData.name==null||app.formData.email==''|| app.formData.email==null||app.formData.message==''|| app.formData.message==null)
-        {
-            $timeout(function(){
-                app.errorMsg ="Please fill the below fields and send us your message."
-            },2000);
-        }
-        else
+        console.log(app.formData)
+        
         {
             
-            user.sendMsg(app.formData).then(function(data){
+            User.sendMsg(app.formData).then(function(data){
                 if(data.data.success){
                     $location.path('/contactStatus');
                     $timeout(function(){
@@ -33,16 +27,9 @@ angular.module('formController', ['userServices'])
 
     this.hiremeMsg = function(hiremeData)
     {
-        console.log(' hire me data '+JSON.stringify(hiremeData)+' '+app.hiremeData.name)
-        if(app.hiremeData.name==''|| app.hiremeData.name==null||app.hiremeData.email==''|| app.hiremeData.email==null||app.hiremeData.message==''|| app.hiremeData.message==null)
+       console.log(app.hiremeData)
         {
-            $timeout(function(){
-                app.errorMsg ="Please fill the below fields and send us your message."
-            },2000);
-        }
-        else
-        {
-            user.hireMsg(app.hiremeData).then(function(data){
+            User.hireMsg(app.hiremeData).then(function(data){
                 if(data.data.success){
                     $location.path('/hiremeStatus');
                     $timeout(function(){

@@ -13,7 +13,7 @@
       
         -----------------> 
       
-      <form class="form-horizontal">
+      <form class="form-horizontal" ng-submit="form.SendMsg(formData)">
          
         <div class="form-group">
           <div class="col-sm-12">
@@ -29,7 +29,7 @@
   
         <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" ng-model = "form.formData.text"required></textarea>
         
-        <button class="btn btn-primary send-button" type="submit" ng-click="form.sendMsg(formData)">
+        <button class="btn btn-primary send-button" type="submit">
           <div class="button">
             <span class="send-text">SEND</span>
           </div>
