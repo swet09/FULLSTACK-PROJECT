@@ -1764,142 +1764,94 @@ checkout page css
 }
 
 
-.privacy{
-    text-align: justify;
-    padding: 70px;
-}
+/*For credit card payment form*/
 
-/* 
-.c_row {
+.cc_row {
     display: -ms-flexbox; 
     display: flex;
     -ms-flex-wrap: wrap; 
     flex-wrap: wrap;
     margin: 0 -16px;
   }
-  
-  .c_col-25 {
-    -ms-flex: 25%;
-    flex: 25%;
-  }
-  
-  .c_col-50 {
+
+  .cc_col-50 {
     -ms-flex: 50%; 
     flex: 50%;
-  }
-  
-  .c_col-75 {
-    -ms-flex: 75%; 
-    flex: 75%;
-  }
-  
-  .c_col-25,
-  .c_col-50,
-  .c_col-75 {
     padding: 0 16px;
   }
-  
-  .c_container {
-    background-color: #f2f2f2;
+
+.cc_body{
+    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+    /* padding: 25% 25% 25% 25%; */
+    padding: 20% 10% 10% 10%;
+}
+
+.cc_container {
+    background-color: white;
     padding: 5px 20px 15px 20px;
+    /* padding:90px 200px 15px 200px; */
     border: 1px solid lightgrey;
     border-radius: 3px;
+    box-sizing: border-box;
+    text-align: center;
+  
   }
   
-  input[type=text] {
-    width: 95%;
+  .cc_in_text {
+    width: 100%;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 3px;
   }
-  
-  label {
+
+  .cc_in_text:hover{
+    border: 1px solid #1ee2e7;
+  }
+
+
+  .cc_label {
     margin-bottom: 10px;
     display: block;
+    text-align: left;
   }
   
-  .c_icon-container {
+  .cc_icon-container {
     margin-bottom: 20px;
     padding: 7px 0;
     font-size: 24px;
+    text-align: left;
   }
-  
-  .c_btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-  }
-  
-  .c_btn:hover {
-    background-color: #45a049;
-  }
-  
+
   @media (max-width: 800px) {
-    .c_row {
+    .cc_row {
       flex-direction: column-reverse;
     }
-    .c_col-25 {
+    .cc_col-25 {
       margin-bottom: 20px;
     }
   }
-  
-  .c_body{
-    align-content: left;
-  }
 
-  .wrap{
-    margin: 100px;
-    margin-top: 0px;
-    margin-left: 350px;
-    margin-bottom: 30px;
-  }
-  
-  #mycircle{
-    stroke-dashoffset: 800;
-    stroke-dasharray: 800;
-    animation-name: padda;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
-  
-  #mycheck{
-    stroke-dashoffset: 800;
-    stroke-dasharray: 800;
-    animation-name: padda;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes padda{
-    to{
-      stroke-dashoffset: 0;
-    }
-  }
-  
-  .statement {
-    animation-duration: 3s;
-    animation-name: slidein;
-  }
-  
-  @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%; 
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
-     */
+  .cc_btn {
+  background-color: #1ee2e7;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  border-color: #1ee2e7;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.cc_btn:hover {
+  background-color: #17d0d5;
+  color: white;
+  border-color: #17d0d5;
+} 
+
+.privacy{
+    text-align: justify;
+    padding: 70px;
+}

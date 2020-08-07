@@ -1,51 +1,7 @@
 <div class="Page header">
-
+<!-- 
   <section class="c_main card__grid">
        
-    <!-- <div class="row">
-
-        <div class="col-md-6 offset-md-3" class="form">
-
-      <form ng-submit="main.checkStatus(checkData);" autocomplete="off">
-
-            <h3 class="heading">Complete Yor Payment</h3>
-            <img class="img-fluid cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
-            
-          <div class="form-group">
-              <label for="cc-number" class="control-label mb-1">Card Number</label>
-              <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" placeholder="card number" required>
-              
-          </div>
-
-            <div class="row">
-
-              <div class="col-6">
-                  <div class="form-group">
-                      <label for="exp-date" class="control-label mb-1">Expiration</label>
-                      <input id="exp-date" name="exp-date" type="tel" class="form-control exp-date" required placeholder="MM / YY">
-                  </div>
-              </div>
-
-              <div class="col-6">
-                <label for="cvv" class="control-label mb-1">CVV</label>
-                <div class="input-group">
-                    <input id="cvv" name="cvv" type="tel" class="form-control cc-cvc" placeholder="cvv" required>
-                    
-                
-                </div>
-            </div>
-
-           </div>
-            
-           <div class="form-group">
-            <label for="cc-name" class="control-label mb-1">Name On Card</label>
-            <input id="cc-name" name="cc-name" type="text" class="form-control" placeholder="card owner name">
-        </div>
-        
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary" class="mak_pay"><i class="fa fa-credit-card"></i> Make Payment</button>
-            </div>
-        </form> -->
         <form ng-submit="main.checkStatus(checkData);" autocomplete="off">
 
         <div class="c_row c_body">
@@ -94,6 +50,48 @@
         </div>
   
 </form>
-</section>
+</section> -->
+
+<div class="cc_body">
+<div class="cc_container">
+
+  <form ng-submit="main.checkStatus(checkData);" autocomplete="off">
+  
+    <div class="cc_row">
+      
+
+      <div class="cc_col-50">
+        <h3>Complete the Payment to Proceed</h3>
+        <label class="cc_label" for="fname">Accepted Cards</label>
+        <div class="cc_icon-container">
+          <i class="fa fa-cc-visa" style="color:navy;"></i>
+          <i class="fa fa-cc-amex" style="color:blue;"></i>
+          <i class="fa fa-cc-mastercard" style="color:red;"></i>
+          <i class="fa fa-cc-discover" style="color:orange;"></i>
+        </div>
+        <label class="cc_label" for="cname">Name on Card</label>
+        <input class="cc_in_text" type="text" id="cname" name="cardname" placeholder="John More Doe">
+        <label class="cc_label" for="ccnum">Credit card number</label>
+        <input class="cc_in_text" type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+        <label class="cc_label" for="expmonth">Exp Month</label>
+        <input class="cc_in_text" type="text" id="expmonth" name="expmonth" placeholder="September">
+        <div class="cc_row">
+          <div class="cc_col-50">
+            <label class="cc_label" for="expyear">Exp Year</label>
+            <input class="cc_in_text" type="text" id="expyear" name="expyear" placeholder="2018">
+          </div>
+          <div class="cc_col-50">
+            <label class="cc_label" for="cvv">CVV</label>
+            <input class="cc_in_text" type="text" id="cvv" name="cvv" placeholder="352">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <input class="cc_btn" type="submit" value="Make Payment" class="btn">
+  </form>
+</div>
+</div>
 
   </div>
