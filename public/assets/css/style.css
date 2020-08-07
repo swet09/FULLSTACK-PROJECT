@@ -1531,4 +1531,123 @@ a.navbar-brand {
         background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
     }
     
+
+    /*================================
+checkout page css
+=================================*/
+
+.c_main{
+    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+    padding-top: 80px;
+    padding-bottom: 100%;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.c_grid-container{
+    opacity: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 60px);
+    background-color: white;
+    color: black;
+    width: 40fr;
+    padding: 10px;
+    grid-gap: 0px;
+    border-radius: 6px;
+}
+
+.c_heading{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+    color:rgb(48, 171, 187);
+    font-size: 20px;
+
+  }
+
+  .c_Button2{
+    /* background-color: green; */
+    padding-top: 15px;
+  }
+
+  .pickup-grid-container{
+    display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 60px);
+  /* background-color: yellow; */
+  background-color: white;
+  color: black;
+  width: 40fr;
+  padding: 10px;
+  grid-gap: 0px;
+  border-radius: 6px;
+  border: 100px;
+  width:60%;
+  text-align: center;
+  margin: auto;
+  height: 200px;
+  }
+
+  .select-ok:hover {
+    background: rgb(48, 144, 156);
+    color:black;
+  }
+  .c_puheading{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    color:rgb(48, 171, 187);
+    font-size: 20px;
+  }
+
+  .codheading{
+      padding-top: 10px;
+  }
+
+  .c_form__input {
+    display: center;
+    width: 400px;
+    padding: 15px;
+    font-family: "Roboto";
+    border: 0;
+    box-shadow: lightgray;
+    border-radius: 4px;
+    outline: 0;
+  }
+
+  .c_btn {
+    margin-top: 15px;
+    height: 50px;
+    width: 400px;
+    overflow: hidden;
+    color: white;
+  }
+
+  .codheading{
+    text-align: center;
+    color:rgb(32, 122, 134);
+    font-size: 20px;
+  }
+  
+  .cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+@media only screen and (max-width: 600px){
+    a.navbar-brand {
+        font-size: 30px;
+    }
+}
+
+
     
