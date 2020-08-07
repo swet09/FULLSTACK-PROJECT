@@ -88,6 +88,11 @@ angular.module('appRoutes',['ngRoute'])
         templateUrl: 'app/views/pages/terms.html'
     })
 
+    
+    .when('/sweets',{
+        templateUrl: 'app/views/pages/sweets.html'
+    })
+
     .otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode({ enabled: true, requireBase: false }); 
