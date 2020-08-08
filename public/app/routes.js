@@ -18,7 +18,7 @@ angular.module('appRoutes',['ngRoute'])
     })
 
     .when('/hireMe',{
-        templateUrl: 'app/views/pages/hireMe.html',
+        templateUrl: 'app/views/pages/hire_me.html',
         controller: 'formCtrl',
         controllerAs: 'form'
     })

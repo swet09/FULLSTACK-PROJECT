@@ -1,0 +1,42 @@
+<section class="container marketing" style="background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%); color: black;">
+    
+    <h2>Submit your information to work with us</h2>
+
+    <div class="user">
+    
+    <div>
+        <form ng-submit="form.hiremeMsg(hiremeData);">
+
+            <label>Name </label>
+            <input class="form-control" type="text" name="username"  ng-model = "form.hiremeData.name" required >
+            <br>
+
+            <label>Email </label>
+            <input class="form-control" type="email" name="email" ng-model = "form.hiremeData.email" required>
+            <br>
+           
+            <label>Address</label>
+            <textarea class="form-control" rows="1"
+            name="streetAddress"required></textarea>
+            <br>
+            <br>
+            <label>Please select Your Preferred Shift</label>
+            <select class="dropdown" style="width: fit-content;" required>
+                <option selected value="" disabled selected></option>
+                <option value="course-type" >7AM - 11AM</option>
+                <option value="short-courses">11AM - 3PM</option>
+                <option value="featured-courses">3PM - 8PM</option>
+                <option value="undergraduate">8PM - 11PM</option>
+            </select>
+            <br>
+            <br>
+            <label>Tell me about yourself</label>
+            <textarea class="form-control" rows="5" name="streetAddress" ng-model = "form.hiremeData.address" required></textarea>
+            <br>
+            <button class="btn btn-primary" type="submit">submit</button>
+        </form>
+    </div>
+    </div>
+</section>
+    
+    

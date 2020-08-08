@@ -3,9 +3,6 @@ angular.module('authServices',[])
 .factory('Auth',function($http,AuthToken){
 
     authFactory={};
-   
-    console.log('testing auth services');
-
     authFactory.login = function(loginData) {
         return $http.post('/api/authenticate', loginData).then(function(data) {
             AuthToken.setToken(data.data.token); // Endpoint will return a token to set
@@ -13,13 +10,14 @@ angular.module('authServices',[])
         });
     };
 
-    authFactory.isLoggedIn = function() {
+    authFactory.isLoggedIn = function() 
+    {
         
-        if (AuthToken.getToken()) {
-            console.log('user is loggedin')
+        if (AuthToken.getToken()) 
+        {
             return true; 
         } else {
-            console.log('user is not loggedin')
+           
             return false; 
         }
     };
