@@ -1916,6 +1916,12 @@ checkout page css
         padding: 0px;
     }
 }
+@media only screen and (min-width: 992px) and (max-width: 1480px) {
+    section{
+        padding: 0px;
+    }
+}
+
 
 
 
