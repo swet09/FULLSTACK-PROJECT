@@ -2,9 +2,19 @@
 
   <div class="cc_body">
 
+    
+    <div class="row show-hide-message" ng-show ="payment.successMsg">
+      <div class="alert alert-success">{{payment.successMsg}}</div>
+    </div>
+
+    <div class="row show-hide-message" ng-show ="payment.errorFlag">
+      <div class="alert alert-danger">{{payment.errorMsg}}</div>
+    </div>
+
+
     <div class="cc_container">
 
-      <form ng-submit="main.checkStatus(checkData);" autocomplete="off">
+      <form ng-submit="payment.checkCard(cardData);" autocomplete="off">
     
         <div class="cc_row">
         
@@ -15,21 +25,27 @@
 
               <label class="cc_label" for="fname">Accepted Cards</label>
 
-                <div class="cc_icon-container">
-                  <i class="fa fa-cc-visa" style="color:navy;"></i>
-                  <i class="fa fa-cc-amex" style="color:blue;"></i>
-                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                  <i class="fa fa-cc-discover" style="color:orange;"></i>
-                </div>
+              <div class="cc_icon-container">
+
+                <input type="radio" id="master" name="cardType" value="master" ng-model="payment.cardData.cardType" required>
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+
+                <input type="radio" id="visa" name="cardType" value="visa"ng-model="payment.cardData.cardType" required>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+
+                <input type="radio" id="discover" name="cardType" value="discover"ng-model="payment.cardData.cardType" required>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+
+              </div>
 
               <label class="cc_label" for="cname">Name on Card</label>
-              <input class="cc_in_text" type="text" id="cname" name="cname" placeholder="Name On Card">
+              <input class="cc_in_text" type="text" id="cname" name="cname" placeholder="Name On Card" ng-model= "payment.cardData.name" required>
 
               <label class="cc_label" for="ccnum">Credit card number</label>
-              <input class="cc_in_text" type="text" id="ccnum" name="ccnum" placeholder="1111-2222-3333-4444">
+              <input class="cc_in_text" type="number" id="ccnum" name="ccnum" placeholder="1111-2222-3333-4444" ng-model= "payment.cardData.cardNumber"required>
 
               <label class="cc_label" for="expmonth">Exp Month</label>
-              <select class="cc_in_text" id="expmonth" name="expmonth">
+              <select class="cc_in_text" id="expmonth" name="expmonth" required>
                 <option value="01">January</option>
                 <option value="02">February </option>
                 <option value="03">March</option>
@@ -47,7 +63,7 @@
               <div class="cc_row">
                 <div class="cc_col-50">
                   <label class="cc_label" for="expyear">Exp Year</label>
-                  <select class="cc_in_text" id="expyear" name="expyear">
+                  <select class="cc_in_text" id="expyear" name="expyear" required>
                     <option value="2020"> 2020</option>
                     <option value="2021"> 2021</option>
                     <option value="2022"> 2022</option>
@@ -58,7 +74,7 @@
                 </div>
                 <div class="cc_col-50">
                   <label class="cc_label" for="cvv">CVV</label>
-                  <input class="cc_in_text" type="text" id="cvv" name="cvv" placeholder="352" >
+                  <input class="cc_in_text" type="number" id="cvv" maxname="cvv" placeholder="352" ng-model= "payment.cardData.cvv" required>
                 </div>
               </div>
           </div>

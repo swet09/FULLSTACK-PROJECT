@@ -4,12 +4,14 @@ var jwt = require("jsonwebtoken"); // token generation
 var nodemailer = require('nodemailer') //sending mails
 var secret = 'fullstack' // secret key for token generation
 
-module.exports = function(router){
+module.exports = function(router)
+{
 
     //nodemailer config setting
     const client = nodemailer.createTransport({
     service: "gmail.com",
-        auth: {
+        auth: 
+        {
             user: 'fullstackprojectpdx@gmail.com', // Your email address
             pass: 'Melcow1#' // Your password
         }
@@ -17,7 +19,8 @@ module.exports = function(router){
 
     //user registeration
     //http:localhost:8080/api/users - ip for testing in ARC
-    router.post('/users',function(req,res){
+    router.post('/users',function(req,res)
+    {
       var user = new User();
       user.username = req.body.username;
       user.password = req.body.password;
@@ -32,11 +35,13 @@ module.exports = function(router){
       else {
       // Save new user to database
       user.save(function(err) {
-          if (err) {
-              console.log(err);
-              if (err) {
+          if (err)
+            {
+              if (err)
+                {
                   //checking error codes to send appropiate messages
-                  if (err.code == 11000) {
+                  if (err.code == 11000) 
+                   {
                       if (err.errmsg[61] == "u") {
                           res.json({ success: false, message: 'That username is already exists' }); 
                       } else if (err.errmsg[61] == "e") {
@@ -48,7 +53,6 @@ module.exports = function(router){
               }
           } else {
               //successful send mail to the email id given
-              console.log(user.email);
               var email = {
                   from:  'fullstackprojectpdx@gmail.com',
                   to: user.email, 
@@ -60,10 +64,7 @@ module.exports = function(router){
               client.sendMail(email, function(err, info) {
                   if (err) {
                       console.log("err--> ",err); 
-                  } else {
-                      console.log(info); 
-                      console.log(user.email); 
-                  }
+                    }
               });
               res.json({ success: true, message: 'User registered Successfully' });
           }
@@ -73,7 +74,8 @@ module.exports = function(router){
   
     //login authentication
     //http:localhost:8080/api/authenticate - ip for testing in ARC
-    router.post('/authenticate', function(req, res) {
+    router.post('/authenticate', function(req, res) 
+    {
         // Check if req.body is valid and not empty or null
         if(req.body.username == null || req.body.username == ''||req.body.password == null || req.body.password == ''){
         
@@ -120,7 +122,8 @@ module.exports = function(router){
     });
 
     // Middleware for Routes to checks for token
-    router.use(function(req, res, next) {
+    router.use(function(req, res, next) 
+    {
         var token = req.body.token || req.body.query || req.headers['x-access-token']; // Check for token in body, URL, or headers
 
         // Check if token is valid and not expired  
@@ -140,13 +143,15 @@ module.exports = function(router){
     });
 
     // Route to get the currently logged in user    
-    router.post('/me', function(req, res) {
+    router.post('/me', function(req, res) 
+    {
         res.send(req.decoded); // Return the token from middleware
     });
 
     // contact message auto mail
     //http:localhost:8080/api/sendMsg - ip for testing in ARC
-    router.post('/sendMsg', function(req,res){
+    router.post('/sendMsg', function(req,res)
+    {
         //mail constructing 
         var email = {
             from:  'fullstackprojectpdx@gmail.com',
@@ -159,15 +164,13 @@ module.exports = function(router){
         client.sendMail(email, function(err, info) {
             if (err) {
                 console.log("err--> ",err); 
-            } else {
-                console.log(info); 
-                console.log( req.body.email); 
             }
         });
         res.json({ success: true});
     });
 
-    router.post('/hireMsg', function(req,res){
+    router.post('/hireMsg', function(req,res)
+    {
         //mail constructing 
         var email = {
             from:  'fullstackprojectpdx@gmail.com',
@@ -180,9 +183,6 @@ module.exports = function(router){
         client.sendMail(email, function(err, info) {
             if (err) {
                 console.log("err--> ",err); 
-            } else {
-                console.log(info); 
-                console.log( req.body.email); 
             }
         });
         res.json({ success: true});

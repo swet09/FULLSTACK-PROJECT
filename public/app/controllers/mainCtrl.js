@@ -1,16 +1,15 @@
 angular.module('mainController', ['authServices'])
 
 .controller('mainCtrl',function(Auth, $timeout, $location,$rootScope){
-    console.log('main controller');
 
     var app = this;
     
 
-    $rootScope.$on('$routeChangeStart',function(){
+    $rootScope.$on('$routeChangeStart',function()
+    {
         if (Auth.isLoggedIn()) {
             Auth.getUser().then(function(data) {
-                //console.log(data)
-                // Check if the returned user is undefined (expired)
+               
                 if (data.data.username === undefined) {
                     Auth.logout(); // Log the user out
                     app.isLoggedIn = false; // Set session to false
@@ -23,41 +22,40 @@ angular.module('mainController', ['authServices'])
                 }
             });
         }
-        else
-        {
-            console.log('not logged in');
-        }
-
+       
     });
 
-    this.doLogin = function(loginData) {
+    this.doLogin = function(loginData) 
+    {
         app.loading = true;
         app.errorMsg=false;
         app.successMsg=false;
         app.loadme = false;
-       // console.log(app.loginData);
-
-
+        app.successFlag = false;
+        app.errorFlag = false;
 
         Auth.login(app.loginData).then(function(data){
-            //console.log(data.data.success);
-           //console.log(data.data.token);
             if(data.data.success){
                 app.loading = false;
+                app.successFlag = true;
                 app.successMsg = data.data.message+"...Redirecting";
                 $timeout(function(){
                     $location.path('/');
+                    app.successFlag = false;
                 },2000);
                 
             }
-            else{
+            else
+            {
+                app.errorFlag = true;
                 app.loading = false;
                 app.errorMsg = data.data.message;
             }
         });
     }
 
-    this.logout = function(){
+    this.logout = function()
+    {
         Auth.logout();
         $location.path('/logout');
         app.isLoggedIn = false;
@@ -67,13 +65,13 @@ angular.module('mainController', ['authServices'])
         },2000);
     }
 
-    this.doPay = function(payData){
-        console.log("inside doPay method");  
+    this.doPay = function(payData)
+    {  
         $location.path('/payment');   
     }
 
-    this.checkStatus = function(){
-        console.log("inside checkStatus method");  
+    this.checkStatus = function()
+    {
         $location.path('/paymentStatus');
     }
      
