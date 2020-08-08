@@ -8,22 +8,16 @@ angular.module('formController', ['userServices'])
     
     this.SendMsg = function(formData)
     {  
-        var number = app.formData.number;
-    
-        if(number.length()==10)
-        {
+        User.sendMsg(app.formData).then(function(data){
+            if(data.data.success)
+            {
+                $location.path('/contactStatus');
+                $timeout(function(){
+                    $location.path('/')
+                },2000);
+            }
             
-            User.sendMsg(app.formData).then(function(data){
-                if(data.data.success){
-                    $location.path('/contactStatus');
-                    $timeout(function(){
-                        $location.path('/')
-                    },2000);
-                }
-                
-            });
-           
-        }
+        });
        
         
     }
