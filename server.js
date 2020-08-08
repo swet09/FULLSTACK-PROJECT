@@ -21,7 +21,7 @@ mongoose.set('useUnifiedTopology', true);
 
 
 //connection to DB
-mongoose.connect('mongodb://lataco:latacofullstack@de243578.mlab.com:47178/lataco', {useNewUrlParser: true},function(err){
+mongoose.connect('mongodb+srv://lataco:latacofullstack@lataco.ebiv5.mongodb.net/lataco?retryWrites=true&w=majority', {useNewUrlParser: true},function(err){
   if(err)
   {
     console.log('Not connected to the database '+ err);
