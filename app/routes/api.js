@@ -41,7 +41,7 @@ module.exports = function(router)
                 {
                   //checking error codes to send appropiate messages
                   if (err.code == 11000) 
-                   {
+                   {console.log("error: ", err.errmsg);
                       if (err.errmsg[61] == "u") {
                           res.json({ success: false, message: 'That username is already exists' }); 
                       } else if (err.errmsg[61] == "e") {
