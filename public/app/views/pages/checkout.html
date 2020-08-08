@@ -11,14 +11,14 @@
   
         <div class="radio c_Button1">
           <input ng-model="selection" type="radio" id='pickUp' name='checkOutOption' value="Pick Up">
-          <label for='pickUp'><b>Pick Up From Store.</b></label>
+          <label class="c_button_lab" for='pickUp' tabindex="0"><b>Pick Up From Store.</b></label>
         </div>
   
       <!--2nd option = Delivery--> 
   
         <div class="radio c_Button2">
           <input ng-model="selection" type="radio" id='Delivery' name='checkOutOption' value="Delivery">
-          <label for='Delivery'><b>Deliver To Your Home?</b></label>
+          <label for='Delivery' tabindex="0"><b>Deliver To Your Home?</b></label>
         </div>
   
     </section>
@@ -42,7 +42,7 @@
             
               <form ng-submit="main.doPay(payData);">
                 
-                <label class="select-label" for='select-time'><b>Select Your PickUp Time.</b></label>&nbsp&nbsp
+                <label class="select-label" for='select-time' tabindex="1"><b>Select Your PickUp Time.</b></label>&nbsp&nbsp
                 <select class="select-time" name="select-time" id="select-time" ng-model = "main.payData.time" required>
                   <option value="">Select Time</option>
                   <option value="Now">Now</option>
