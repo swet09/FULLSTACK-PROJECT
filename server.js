@@ -21,7 +21,7 @@ mongoose.set('useUnifiedTopology', true);
 
 
 //connection to DB
-mongoose.connect('mongodb://localhost:27017/foodCart', {useNewUrlParser: true},function(err){
+mongoose.connect('mongodb://lataco:latacofullstack@de243578.mlab.com:47178/lataco', {useNewUrlParser: true},function(err){
   if(err)
   {
     console.log('Not connected to the database '+ err);
