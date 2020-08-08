@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
   var Schema = mongoose.Schema; // Assign Mongoose Schema function to variable to defined a table schema
   var bcrypt = require('bcrypt-nodejs'); // for encrypting 
 
+  //user table definition
   var userSchema = new Schema({
       username : {type:String, lowercase:true, required:true, unique:true},    
       email : {type:String, lowercase:true, required:true, unique:true},

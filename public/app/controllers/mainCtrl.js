@@ -1,36 +1,40 @@
+//controller for login authentication and check token where user is logged in or not
+
 var loginData={
     username:'',
     password:''
 };
 
-angular.module('mainController', ['authServices'])
+angular.module('mainController', ['authServices'])//authservice for authentication and token validation
 
 .controller('mainCtrl',function(Auth, $timeout, $location,$rootScope){
 
     var app = this;
     
-
-    $rootScope.$on('$routeChangeStart',function()
+    $rootScope.$on('$routeChangeStart',function()//is logged in function token validation
     {
-        if (Auth.isLoggedIn()) {
-            Auth.getUser().then(function(data) {
+        if (Auth.isLoggedIn()) 
+        {
+            Auth.getUser().then(function(data) 
+            {
                
-                if (data.data.username === undefined) {
+                if (data.data.username === undefined) 
+                {
                     Auth.logout(); // Log the user out
                     app.isLoggedIn = false; // Set session to false
                     $location.path('/'); // Redirect to home page
                     app.loadme = false; // Allow loading of page
-                }else
+                }
+                else
                 {
                     app.isLoggedIn = true;
                     app.username=data.data.username;
                 }
             });
-        }
-       
+        }   
     });
 
-    this.doLogin = function(loginData) 
+    this.doLogin = function(loginData) //authentication function login call 
     {
         app.loading = true;
         app.errorMsg=false;
@@ -39,8 +43,10 @@ angular.module('mainController', ['authServices'])
         app.successFlag = false;
         app.errorFlag = false;
 
-        Auth.login(app.loginData).then(function(data){
-            if(data.data.success){
+        Auth.login(app.loginData).then(function(data)
+        {
+            if(data.data.success)//if success redirect to home page 
+            {
                 app.loading = false;
                 app.successFlag = true;
                 app.successMsg = data.data.message+"...Redirecting";
@@ -50,9 +56,8 @@ angular.module('mainController', ['authServices'])
                     app.loginData.username='';
                     app.loginData.password='';
                 },2000);
-                
             }
-            else
+            else //else display error
             {
                 app.errorFlag = true;
                 app.loading = false;
@@ -61,7 +66,7 @@ angular.module('mainController', ['authServices'])
         });
     }
 
-    this.logout = function()
+    this.logout = function() //log out -> kill token set flag variable to false
     {
         Auth.logout();
         $location.path('/logout');
@@ -72,15 +77,15 @@ angular.module('mainController', ['authServices'])
         },2000);
     }
 
-    this.doPay = function(payData)
+    this.doPay = function(payData) //route to doPay
     {  
         $location.path('/payment');   
     }
 
-    this.checkStatus = function()
+    this.checkStatus = function() //route to paymentStatus
     {
         $location.path('/paymentStatus');
     }
     
-    app.loginData=loginData;
+    app.loginData=loginData; //clearing data
 });

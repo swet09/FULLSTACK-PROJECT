@@ -1,3 +1,4 @@
+//controller to check user registeration
 var regData ={
     email:'',
     username:'',
@@ -8,14 +9,15 @@ angular.module('userController', ['userServices'])
 .controller('regCtrl',function($http, $location, $timeout, User){
     var app = this;
 
-    this.regUser = function(regData) {
+    this.regUser = function(regData) //calls on submit to user registeration
+    {
         app.loading = true;
         app.errorMsg=false;
         app.successFlag = false;
         app.errorFlag = false;
-        User.create(app.regData).then(function(data){
-
-            if(data.data.success)
+        User.create(app.regData).then(function(data)
+        {
+            if(data.data.success) //if success route to login page
             {
                 app.loading = false;
                 app.successFlag = true;
@@ -27,7 +29,7 @@ angular.module('userController', ['userServices'])
                     app.regData.password='';
                 },2000);
             }
-            else
+            else // is failure display the error message
             {
                 app.errorFlag = true;
                 app.loading = false;
@@ -36,6 +38,5 @@ angular.module('userController', ['userServices'])
         });
     }
 
-    app.regData =regData;
-
+    app.regData =regData; //clear form data
 });
