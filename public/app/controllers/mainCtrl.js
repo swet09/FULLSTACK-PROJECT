@@ -1,3 +1,8 @@
+var loginData={
+    username:'',
+    password:''
+};
+
 angular.module('mainController', ['authServices'])
 
 .controller('mainCtrl',function(Auth, $timeout, $location,$rootScope){
@@ -42,6 +47,8 @@ angular.module('mainController', ['authServices'])
                 $timeout(function(){
                     $location.path('/');
                     app.successFlag = false;
+                    app.loginData.username='';
+                    app.loginData.password='';
                 },2000);
                 
             }
@@ -74,5 +81,6 @@ angular.module('mainController', ['authServices'])
     {
         $location.path('/paymentStatus');
     }
-     
+    
+    app.loginData=loginData;
 });

@@ -97,7 +97,7 @@
                     </li>
 
                     <li class="ngnav nav1">
-                        <a class="page-scroll" href="/contact">Contact Us</a>
+                        <a ng-show="!main.isLoggedIn" class="page-scroll" href="/contact">Contact Us</a>
                     </li>
                     
                     <li class="ngnav nav2">
@@ -111,19 +111,6 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header 
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">FullStack</div>
-                <div class="intro-heading">Project</div>
-                <a  class="page-scroll btn btn-xl">Sign In</a>
-                <a class="page-scroll btn twitterbtn" href="/register">Register</a>
-
-            </div>
-        </div>
-    </header>-->
 
     <section id="services">
         <div class="container">
@@ -175,7 +162,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery-3.1.1.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/angular.min.js"></script>
 </body>
 
 </html>
