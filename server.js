@@ -19,8 +19,9 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
+
 //connection to DB
-mongoose.connect('mongodb://fullstackprojectpdx:fullstackprojectpdx@de243578.mlab.com:47178/fullstack', {useNewUrlParser: true},function(err){
+mongoose.connect('mongodb://localhost:27017/foodCart', {useNewUrlParser: true},function(err){
   if(err)
   {
     console.log('Not connected to the database '+ err);
