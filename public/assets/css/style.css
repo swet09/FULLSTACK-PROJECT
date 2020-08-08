@@ -394,7 +394,7 @@ section h3.section-subheading {
     font-weight: 400;
 }
 
-@media(min-width:768px) {
+@media(max-width:770px) {
     section {
         padding: 0;
     }
@@ -1036,7 +1036,7 @@ a.navbar-brand {
     
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 760px){
     a.navbar-brand {
         font-size: 30px;
     }
@@ -1855,3 +1855,67 @@ checkout page css
     text-align: justify;
     padding: 70px;
 }
+
+@media only screen and (max-width: 770px) {
+    .ng-scope{ 
+        text-align: center;
+        padding-top: 10px ;
+        padding-bottom: 25px;
+        width:100%;
+    }
+    section{
+        padding: 0px;
+    }
+    a.navbar-brand{
+        font-size: 30px;
+    }
+}
+
+.col-md-2{
+    
+    max-width:100%;
+    width: 19.66666667%;  
+}
+@media only screen and (max-width: 770px) {
+    .col-md-2{
+        max-width:100%;
+        width: 50%;  
+        padding-top: 20px;
+        padding-left: 100px;
+    }
+    .orderrow{
+        padding-top: 100px;
+    }
+    section{
+        padding: 0px;
+    }
+}
+
+
+@media only screen and (min-width: 770px) and (max-width: 992px) {
+    .col-md-2{
+        padding-top: 20px;
+        max-width:100%;
+        width: 30%;
+        padding-left: 40px; 
+    }
+    .orderrow{
+        padding-top: 100px;
+        padding-left:20px;
+    }
+    section{
+        padding: 0px;
+    }
+}
+
+.shop-item-title{
+    font-size: large;
+}
+@media only screen and (min-width: 1480px){
+    section{
+        padding: 0px;
+    }
+}
+
+
+

@@ -2,6 +2,10 @@
   
   <h2 class="section-header">Submit your information to work with us</h1>
   
+    <div class="row show-hide-message" ng-show ="form.errorMsg">
+      <div class="alert alert-danger">{{form.errorMsg}}</div>
+    </div>
+
   <div class="contact-wrapper">
     
       <!---------------- 
@@ -14,23 +18,28 @@
        
       <div class="form-group">
         <div class="col-sm-12">    
-          <input type="text" class="form-control" id="name" placeholder=" ENTER YOUR NAME" name="name" ng-model = "form.hiremeData.name" required>
+          <input type="text" class="form-control" id="name" placeholder=" ENTER YOUR NAME"
+          name="name" ng-model = "form.hiremeData.name" required>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-12">
-          <input type="email" class="form-control" id="email" placeholder="ENTER YOUR EMAIL" name="email" ng-model = "form.hiremeData.email" required>
+          <input type="email" class="form-control" id="email" placeholder="ENTER YOUR EMAIL" 
+          name="email" ng-model = "form.hiremeData.email" required>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-12">
-          <input type="phone" class="form-control" id="number" name="phone" placeholder="XXX-XXX-XXXX (MOBILE NUMBER)" ng-model = "form.hiremeData.number" required/>
+        <input type="number" class="form-control" id="number" name="phone"   ng-size="10"
+        placeholder="XXX XXX XXXX (MOBILE NUMBER)"  ng-model = "form.hiremeData.number" 
+        ng-maxlength="10" ng-minlength="10" required />
         </div>
       </div>
 
-      <textarea class="form-control" rows="5" placeholder="ENTER YOUR ADDRESS" name="streetAddress" ng-model = "form.hiremeData.email" required></textarea>
+      <textarea class="form-control" rows="5" placeholder="ENTER YOUR ADDRESS"
+       name="streetAddress" ng-model = "form.hiremeData.text" required></textarea>
       
       <button class="btn btn-primary send-button" id="submit" type="submit"  value="SEND">
         <div class="button">
