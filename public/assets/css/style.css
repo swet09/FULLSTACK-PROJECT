@@ -1551,20 +1551,11 @@ checkout page css
     border-radius: 6px;
 }
 
-.c_form__input {
-    width: 400px;
-    padding: 15px;
-    font-family: "Roboto";
-    border: 0;
-    border-radius: 4px;
-    outline: 0;
-  }
-
 .c_heading{
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: center;
-    color:rgb(14, 123, 138);
+    color:rgb(48, 171, 187);
     font-size: 20px;
 
   }
@@ -1592,21 +1583,31 @@ checkout page css
   height: 200px;
   }
 
-  .select-ok {
-    background: rgb(39, 125, 136);
-    color:white;
-    border-color: rgb(39, 125, 136);
+  .select-ok:hover {
+    background: rgb(48, 144, 156);
+    color:black;
   }
   .c_puheading{
     grid-column-start: 1;
     grid-column-end: 3;
     text-align: center;
-    color:rgb(14, 123, 138);
+    color:rgb(48, 171, 187);
     font-size: 20px;
   }
 
   .codheading{
       padding-top: 10px;
+  }
+
+  .c_form__input {
+    display: center;
+    width: 400px;
+    padding: 15px;
+    font-family: "Roboto";
+    border: 0;
+    box-shadow: lightgray;
+    border-radius: 4px;
+    outline: 0;
   }
 
   .c_btn {
@@ -1615,8 +1616,6 @@ checkout page css
     width: 400px;
     overflow: hidden;
     color: white;
-    background-color: rgb(32, 122, 134);
-    border-color: rgb(32, 122, 134);
   }
 
   .codheading{
@@ -1624,48 +1623,18 @@ checkout page css
     color:rgb(32, 122, 134);
     font-size: 20px;
   }
-
-  @media (max-width: 360px){
-    .c_main{
-        padding: 40px;
-        height: fit-content;
-    }
-    .c_Button1, .c_Button2 {
-        margin: 0px;
-        padding-left: 20px;
-        padding-top: 10px;
-      }
-    .radio label{
-        padding:0px 0px 0px 0px;
-    }
-    .c_form__input {
-        width: 300px;
-    }
-    .c_btn {
-        width: 250px;
-    }
-}
-
-@media (min-width: 361px) and (max-width: 760px){
-    .c_main{
-        padding-bottom: 100%;
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-    .c_Button1, .c_Button2 {
-        margin: 0px;
-        padding-left: 20px;
-        padding-top: 10px;
-      }
-    .radio label{
-        padding:0px 0px 0px 0px;
-    }
-    .c_form__input {
-        width: 300px;
-    }
-    .c_btn {
-        width: 250px;
-    }
+  
+  .cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
 }
 
 @media only screen and (max-width: 600px){
@@ -1814,11 +1783,7 @@ checkout page css
 .cc_body{
     background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
     /* padding: 25% 25% 25% 25%; */
-    padding: 10% 10% 10% 10%;
-}
-
-.cc_head{
-    color: rgb(11, 156, 167);
+    padding: 20% 10% 10% 10%;
 }
 
 .cc_container {

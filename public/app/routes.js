@@ -54,7 +54,9 @@ angular.module('appRoutes',['ngRoute'])
     })
 
     .when('/payment',{
-        templateUrl: 'app/views/pages/checkoutPayment.html'
+        templateUrl: 'app/views/pages/checkoutPayment.html',
+        controller: 'paymentCtrl',
+        controllerAs: 'payment'
     })
 
    .when('/paymentStatus',{
