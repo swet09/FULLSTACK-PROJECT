@@ -2,7 +2,6 @@
 
   <div class="cc_body">
 
-    
     <div class="row show-hide-message" ng-show ="payment.successMsg">
       <div class="alert alert-success">{{payment.successMsg}}</div>
     </div>
@@ -10,7 +9,6 @@
     <div class="row show-hide-message" ng-show ="payment.errorFlag">
       <div class="alert alert-danger">{{payment.errorMsg}}</div>
     </div>
-
 
     <div class="cc_container">
 
@@ -25,18 +23,18 @@
 
               <label class="cc_label" for="fname">Accepted Cards</label>
 
-              <div class="cc_icon-container">
+                <div class="cc_icon-container">
 
-                <input type="radio" id="master" name="cardType" value="master" ng-model="payment.cardData.cardType" required>
-                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                  <input type="radio" id="master" name="cardType" value="master" ng-model="payment.cardData.cardType" required>
+                  <i class="fa fa-cc-visa" style="color:navy;"></i>
 
-                <input type="radio" id="visa" name="cardType" value="visa"ng-model="payment.cardData.cardType" required>
-                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                  <input type="radio" id="visa" name="cardType" value="visa"ng-model="payment.cardData.cardType" required>
+                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
 
-                <input type="radio" id="discover" name="cardType" value="discover"ng-model="payment.cardData.cardType" required>
-                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                  <input type="radio" id="discover" name="cardType" value="discover"ng-model="payment.cardData.cardType" required>
+                  <i class="fa fa-cc-discover" style="color:orange;"></i>
 
-              </div>
+                </div>
 
               <label class="cc_label" for="cname">Name on Card</label>
               <input class="cc_in_text" type="text" id="cname" name="cname" placeholder="Name On Card" ng-model= "payment.cardData.name" required>

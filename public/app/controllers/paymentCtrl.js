@@ -40,6 +40,7 @@ angular.module('paymentController', [])
        else
        {
             $timeout(function(){
+                app.successFlag=true;
                 app.successMsg = 'Card details authenticated.'
                 $location.path('/paymentStatus');
             },3000);
