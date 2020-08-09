@@ -17,63 +17,54 @@ module.exports = function(router)
         }
     });
 
+    
     //user registeration
     //http:localhost:8080/api/users - ip for testing in ARC
     router.post('/users',function(req,res)
     {
-      var user = new User();
-      user.username = req.body.username;
-      user.password = req.body.password;
-      user.email = req.body.email;
-      user.temporarytoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '6h' }); //temporary token is set for 6 hours
+        var user = new User();
+        user.username = req.body.username;
+        user.password = req.body.password;
+        user.email = req.body.email;
 
-      // Check if req.body is valid and not empty or null
-      if (req.body.username === null || req.body.username === '' || req.body.password === null || req.body.password === '' || req.body.email === null || req.body.email === '' || req.body.name === null || req.body.name === '') 
-      {
-        res.json({ success: false, message: 'Ensure username, email, and password were provided' });
-      } 
-      else
-      {
-        // Save new user to database
-        user.save(function(err) {
-            if (err){
-                if (err.code == 11000)
+         // Check if req.body is valid and not empty or null
+        if (req.body.username === null || req.body.username === '' || req.body.password === null || req.body.password === '' || req.body.email === null || req.body.email === '' || req.body.name === null || req.body.name === '') 
+        {
+          res.json({ success: false, message: 'Ensure username, email, and password were provided' });
+        } 
+        else
+        {
+             // Save new user to database
+            user.save(function(err)
+            {
+    
+                if (err)
                 {
-                    if (err.errmsg[61] == "u")
-                    {
-                        res.json({ success: false, message: 'That username is already exists' });
-                    }
-                    else if (err.errmsg[61] == "e")
-                    {
-                        res.json({ success: false, message: 'That e-mail is already exsists' });
-                    }
+                    res.json({ success: false, message: 'That username or e-mail is already exsists' });
                 }
                 else
                 {
-                    res.json({ success: false, message: err });
-                }
-            }
-            else
-            {
-                //successful send mail to the email id given
-                var email = {
-                    from:  'fullstackprojectpdx@gmail.com',
-                    to: user.email, 
-                    subject: 'Welcome to La Taco',
-                    text: 'Hello ' + user.name + ', thank you for registering at La Taco.',
-                    html: '<h1>Welcome :)</h1></br>Hello<strong> ' + user.username + '</strong>,<br><br>Thank you for registering at localhost.com.'
-                };
-                //mail sending fucntion
-                client.sendMail(email, function(err, info) {
-                    if (err) 
+                    //successful send mail to the email id given
+                    var email = 
                     {
-                        console.log("err--> ",err); 
-                    }
-                    res.json({ success: true, message: 'User registered Successfully' });
-                });
-            }
-        });
-      }
+                        from:  'fullstackprojectpdx@gmail.com',
+                        to: user.email, 
+                        subject: 'Welcome to La Taco',
+                        text: 'Hello ' + user.name + ', thank you for registering at La Taco.',
+                        html: '<h1>Welcome :)</h1></br>Hello<strong> ' + user.username + '</strong>,<br><br>Thank you for registering at localhost.com.'
+                    };
+                    //mail sending fucntion
+                    client.sendMail(email, function(err, info) 
+                    {
+                        if (err) 
+                        {
+                            console.log("err--> ",err); 
+                        }
+                        res.json({ success: true, message: 'User registered Successfully' });
+                    });
+                }
+            });
+        }
 
     });
   
