@@ -40,7 +40,7 @@ module.exports = function(router)
     
                 if (err)
                 {
-                    res.json({ success: false, message: 'That username or e-mail is already exsists' });
+                    res.json({ success: false, message: 'That username or e-mail is already exists' });
                 }
                 else
                 {
