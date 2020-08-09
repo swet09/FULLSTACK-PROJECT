@@ -77,12 +77,19 @@ angular.module('mainController', ['authServices'])//authservice for authenticati
         },2000);
     }
 
-    this.doPay = function(payData) //route to doPay
+    /**
+     * route to payment page, credit cart details.
+     * @param payData 
+     */
+    this.doPay = function(payData)
     {  
         $location.path('/payment');   
     }
 
-    this.checkStatus = function() //route to paymentStatus
+    /**
+     * This is the route to final page that displays status of the order
+     */
+    this.checkStatus = function()
     {
         $location.path('/paymentStatus');
     }

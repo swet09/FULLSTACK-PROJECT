@@ -45,23 +45,27 @@ angular.module('appRoutes',['ngRoute'])
         controllerAs: 'register'
     })
 
-    .when('/placeOrder',{ //route for place order
+    //route for place order
+    .when('/placeOrder',{ 
         templateUrl: 'app/views/pages/placeOrder.html',
         controller: 'cartCtrl',
         controllerAs: 'cart'
     })
 
-    .when('/checkout',{ //route for checkout
+    //route for checkout
+    .when('/checkout',{ 
         templateUrl: 'app/views/pages/checkout.html'
     })
 
-    .when('/payment',{ //route for payment
+    //route for payment
+    .when('/payment',{ 
         templateUrl: 'app/views/pages/checkoutPayment.html',
         controller: 'paymentCtrl',
         controllerAs: 'payment'
     })
 
-   .when('/paymentStatus',{ //route for payment status
+   //route for payment status
+    .when('/paymentStatus',{ 
         templateUrl: 'app/views/pages/checkoutStatus.html'
     })
 

@@ -40,9 +40,14 @@
   
             <div class="select-option">  
             
+              <!-- A form to select pickup time -->
+
               <form ng-submit="main.doPay(payData);">
                 
-                <label class="select-label" for='select-time' tabindex="1"><b>Select Your PickUp Time.</b></label>&nbsp&nbsp
+                <label class="select-label" for='select-time' tabindex="1">
+                  <b>Select Your PickUp Time.</b>
+                </label>
+                &nbsp&nbsp
                 <select class="select-time" name="select-time" id="select-time" ng-model = "main.payData.time" required>
                   <option value="">Select Time</option>
                   <option value="Now">Now</option>
