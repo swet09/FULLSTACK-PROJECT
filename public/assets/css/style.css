@@ -1007,12 +1007,13 @@ header .intro-text .intro-heading {
 }
 
 /*nav bar*/
+/* to display bottom line when hover the nav bar items */
 .topnav a:hover {
     border-bottom: 3px solid red;
 }
 
 
-
+/* set the bg color and override the bootstrap styles */
 .navbar {
     background-color: #fff;
     border: 1px solid #dedede;
@@ -1027,6 +1028,7 @@ header .intro-text .intro-heading {
     padding: 5px !important;
 }
 
+/* la taco color and size */
 a.navbar-brand {
     font-size: 100px;
     font-weight: bold;
@@ -1035,14 +1037,14 @@ a.navbar-brand {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     
 }
-
+/* media queries for navbar */
 @media only screen and (max-width: 760px){
     a.navbar-brand {
         font-size: 30px;
     }
 }
 
-
+/* fix the size of the container */
 .container {
     max-width: 100% !important; 
     padding-right: 0px !important;
@@ -1074,7 +1076,7 @@ a.navbar-brand {
     color: purple;
   }
   
-  /* Center align the text within the three columns below the carousel */
+  /* Center align the text within the three columns*/
   .marketing .col-lg-4 {
     text-align: center;
     margin-bottom: 20px;
@@ -2030,11 +2032,14 @@ for nav bar
 }
 @media only screen and (max-width: 770px) {
     .col-md-2{
-        max-width:100%;
-        width: 50%;  
-        padding-top: 20px;
-        padding-left: 10px;
-        margin: auto;
+        max-width:100% !important;
+        width: 50% !important;  
+        padding-top: 20px !important;
+        padding-left: 10px !important;
+        margin: auto !important;
+    }
+    .row{
+        margin-right: auto;
     }
     .orderrow{
         padding-top: 100px;
